@@ -499,6 +499,7 @@ function crearformSEARCHusuario(){
 	
 	// creo la accion para el formulario y el onsubmit
 	$("#id_form_usuario").attr('action','javascript:SEARCHusuarioAjax()');
+	$("#id_form_usuario").attr('class','buscar-button');
 	$("#id_form_usuario").on('submit', search_usuario);
 	
 	// pongo el campo de dni editable y le asocio la funcion para el onblur

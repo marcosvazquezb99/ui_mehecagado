@@ -6,6 +6,7 @@
 
     <title>Gestión Usuario</title>
     <link rel="stylesheet" href="css/left_navbar.css">
+    <link rel="stylesheet" href="css/modal.css">
     <script type="text/javascript" src="./js/rol.js"></script>
     <script type="text/javascript" src="./js/usuario.js"></script>
     <script type="text/javascript" src="./locale/idioma.js"></script>
@@ -32,10 +33,7 @@
     <div id="id_texterror"></div>
     <img src="./images/cerrar3.jpg" width="50" height="50" onclick="cerrarMensajeKO();">
 </div>
-<img src="./images/add4.png" height="80" width="80" onclick="crearformADDusuario();" alt="Insertar"
-     title="Insertar"><span class="titulo_add">Insertar</span></img>
-<img src="./images/search4.png" height="60" width="60" onclick="crearformSEARCHusuario();"
-     alt="Buscar" title="Buscar"><span class="titulo_search">Buscar</span></img>
+
 <div>
     <table id="id_tablaUsuarios" border="1">
         <thead>
@@ -55,22 +53,7 @@
         </tbody>
     </table>
 </div>
-<div id="id_caja_formulario_usuario" style="display: none;">
-    <form id="id_form_usuario" name="form_usuario" method="post">
 
-        <label for="id_dni">DNI</label>
-        <input class="text_formato_dni" type="text" id="id_dni" name="dni" placeholder="8 letras y un número" maxlength="9"
-               title="8 letras y un número"><span class="text_formato_dni">8 letras y un número</span>
-        <br>
-        <label class="usuario">Login Usuario</label>
-        <input class="text_formato_usuario" type="text" id="id_usuario" name="usuario"
-               placeholder="letras sin acentos y números" title="letras sin acentos y números"><span class="text_formato_usuario">letras sin acentos y
-        números</span>
-        <br>
-        <div id="caja_select_rol"><label class="id_rol">Rol Usuario</label></div>
-
-    </form>
-</div>
 <div>
     <a href="./menu.html"><p class="titulo_volver">Volver</p></a>
 </div>
@@ -78,6 +61,51 @@
 <div id="naptha_container0932014_0707"></div>
 <div id="leftSidenav" class="sidenav">
 
+</div>
+
+
+
+<details>
+    <summary>
+
+            <img src="./images/add4.png" height="80" width="80" onclick="crearformADDusuario();" alt="Insertar"
+                 title="Insertar"><span class="titulo_add">Insertar</span></img>
+
+
+            <img src="./images/search4.png" height="60" width="60" onclick="crearformSEARCHusuario();"
+                       alt="Buscar" title="Buscar"><span class="titulo_search">Buscar</span></img>
+
+        <div class="details-modal-overlay"></div>
+    </summary>
+    <div class="details-modal">
+        <div class="details-modal-close">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M13.7071 1.70711C14.0976 1.31658 14.0976 0.683417 13.7071 0.292893C13.3166 -0.0976311 12.6834 -0.0976311 12.2929 0.292893L7 5.58579L1.70711 0.292893C1.31658 -0.0976311 0.683417 -0.0976311 0.292893 0.292893C-0.0976311 0.683417 -0.0976311 1.31658 0.292893 1.70711L5.58579 7L0.292893 12.2929C-0.0976311 12.6834 -0.0976311 13.3166 0.292893 13.7071C0.683417 14.0976 1.31658 14.0976 1.70711 13.7071L7 8.41421L12.2929 13.7071C12.6834 14.0976 13.3166 14.0976 13.7071 13.7071C14.0976 13.3166 14.0976 12.6834 13.7071 12.2929L8.41421 7L13.7071 1.70711Z" fill="black" />
+            </svg>
+        </div>
+        <div class="details-modal-title">
+            <h1>Acción</h1>
+        </div>
+        <div class="details-modal-content">
+            <div id="id_caja_formulario_usuario" style="display: none;">
+                <form id="id_form_usuario" name="form_usuario" method="post">
+
+                    <label for="id_dni">DNI</label>
+                    <input class="text_formato_dni" type="text" id="id_dni" name="dni" placeholder="8 letras y un número" maxlength="9"
+                           title="8 letras y un número"><span class="text_formato_dni">8 letras y un número</span>
+                    <br>
+                    <label class="usuario">Login Usuario</label>
+                    <input class="text_formato_usuario" type="text" id="id_usuario" name="usuario"
+                           placeholder="letras sin acentos y números" title="letras sin acentos y números"><span class="text_formato_usuario">letras sin acentos y
+        números</span>
+                    <br>
+                    <div id="caja_select_rol"><label class="id_rol">Rol Usuario</label></div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</details>
 </div>
 </body>
 </html>
