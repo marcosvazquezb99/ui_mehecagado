@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Menú</title>
+    <script type="text/javascript" src="./locale/idioma.js"></script>
+    <script type="text/javascript" src="./locale/Lang_ES.js"></script>
+    <script type="text/javascript" src="./locale/Lang_EN.js"></script>
+    <script type="text/javascript" src="./locale/Lang_GA.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="./js/validacionesComunes.js"></script>
+    <script type="text/javascript" src="./Comun/config.js"></script>
+</head>
+<body onload="esta_autenticado();incluircabecera();setLang();comprobar_permisos();ponerinvisibleerror();">
+<div id="id_caja_superior">
+    <table id="id_tabla_idiomas">
+        <!--<tbody><tr><td onclick="setLang(&#39;ES&#39;);">ES</td><td onclick="setLang(&#39;EN&#39;);">EN</td><td onclick="setLang(&#39;GA&#39;);">GA</td></tr></tbody>-->
+    </table>
+    <!--Usuario :root<br><a href="javascript:desconectar();">Desconectar</a>-->
+</div>
+<div id="id_caja_error" style="display: none;">
+    <div id="id_texterror"></div>
+    <img src="./images/cerrar3.jpg" width="50" height="50" onclick="cerrarMensajeKO();">
+</div>
+<h1 class="pagina_menu_wellcome"></h1>
+<a href="./gestionpersona.html"><h2 class="pagina_persona_wellcome">Gestión de personas</h2></a>
+<a href="./gestionusuario.html"><h2 class="pagina_usuario_wellcome">Gestión de usuarios</h2></a>
+<a href="./gestionrol.html"><h2 class="pagina_rol_wellcome"></h2></a>
+<a href="./gestionaccion.html"><h2 class="pagina_accion_wellcome"></h2></a>
+<a href="./gestionfuncionalidad.html"><h2 class="pagina_funcionalidad_wellcome"></h2></a>
+<a href="./gestionrolaccionfuncionalidad.html"><h2 class="pagina_rolaccionfuncionalidad_wellcome"></h2></a>
+
+<div id="naptha_container0932014_0707"></div>
+</body>
+</html>

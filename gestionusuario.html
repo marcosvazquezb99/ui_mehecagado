@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Gestión Usuario</title>
+    <script type="text/javascript" src="./js/rol.js"></script>
+    <script type="text/javascript" src="./js/usuario.js"></script>
+    <script type="text/javascript" src="./locale/idioma.js"></script>
+    <script type="text/javascript" src="./locale/Lang_ES.js"></script>
+    <script type="text/javascript" src="./locale/Lang_EN.js"></script>
+    <script type="text/javascript" src="./locale/Lang_GA.js"></script>
+    <script type="text/javascript" src="./js/validacionesComunes.js"></script>
+    <!--<script type="text/javascript" src="./Gestión de personas_files/Framework.base.js.descarga"></script>-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="./Comun/config.js"></script>
+    <script type="text/javascript" src="./js/md5.js"></script>
+</head>
+<body onload="esta_autenticado();incluircabecera();ponerinvisibleerror();ponerinvisibleformusuario();devolverusuariosajax();setLang();">
+
+<h1 class="pagina_usuario_wellcome">Gestión de usuarios</h1>
+<div id="id_caja_superior">
+    <table id="id_tabla_idiomas">
+        <!--<tbody><tr><td onclick="setLang(&#39;ES&#39;);">ES</td><td onclick="setLang(&#39;EN&#39;);">EN</td><td onclick="setLang(&#39;GA&#39;);">GA</td></tr></tbody>-->
+    </table>
+    <!--Usuario :root<br><a href="javascript:desconectar();">Desconectar</a>-->
+</div>
+<div id="id_caja_error" style="display: none;">
+    <div id="id_texterror"></div>
+    <img src="./images/cerrar3.jpg" width="50" height="50" onclick="cerrarMensajeKO();">
+</div>
+<img src="./images/add4.png" height="80" width="80" onclick="crearformADDusuario();" alt="Insertar"
+     title="Insertar"><span class="titulo_add">Insertar</span></img>
+<img src="./images/search4.png" height="60" width="60" onclick="crearformSEARCHusuario();"
+     alt="Buscar" title="Buscar"><span class="titulo_search">Buscar</span></img>
+<div>
+    <table id="id_tablaUsuarios" border="1">
+        <thead>
+        <tr>
+            <th class="dni">DNI</th>
+            <th class="usuario">Login Usuario</th>
+            <th class="id_rol">Rol Usuario</th>
+            <th class="titulo_edit">Editar</th>
+            <th class="titulo_delete">Borrar</th>
+            <th class="titulo_showcurrent">Detalle</th>
+        </tr>
+        </thead>
+        <tbody id="id_datosusuarios">
+        <tr>
+            <td colspan="6" style="text-align: center">No hay datos</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div id="id_caja_formulario_usuario" style="display: none;">
+    <form id="id_form_usuario" name="form_usuario" method="post">
+
+        <label for="id_dni">DNI</label>
+        <input class="text_formato_dni" type="text" id="id_dni" name="dni" placeholder="8 letras y un número" maxlength="9"
+               title="8 letras y un número"><span class="text_formato_dni">8 letras y un número</span>
+        <br>
+        <label class="usuario">Login Usuario</label>
+        <input class="text_formato_usuario" type="text" id="id_usuario" name="usuario"
+               placeholder="letras sin acentos y números" title="letras sin acentos y números"><span class="text_formato_usuario">letras sin acentos y
+        números</span>
+        <br>
+        <div id="caja_select_rol"><label class="id_rol">Rol Usuario</label></div>
+
+    </form>
+</div>
+<div>
+    <a href="./menu.html"><p class="titulo_volver">Volver</p></a>
+</div>
+
+<div id="naptha_container0932014_0707"></div>
+</body>
+</html>

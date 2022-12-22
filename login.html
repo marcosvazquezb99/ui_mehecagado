@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0038)http://193.147.87.202/Front/login.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>LOGIN</title>
+    <script type="text/javascript" src="./js/Login.js"></script>
+    <script type="text/javascript" src="./js/md5.js"></script>
+    <script type="text/javascript" src="./locale/idioma.js"></script>
+    <script type="text/javascript" src="./locale/Lang_ES.js"></script>
+    <script type="text/javascript" src="./locale/Lang_EN.js"></script>
+    <script type="text/javascript" src="./locale/Lang_GA.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="./js/validacionesComunes.js"></script>
+    <script type="text/javascript" src="./Comun/config.js"></script>
+  </head>
+  <body onload="incluircabecera();ponerinvisibleerror();setLang();">
+    <div id="id_caja_superior">
+    <table id="id_tabla_idiomas"><!--<tbody><tr><td onclick="setLang(&#39;ES&#39;);">ES</td><td onclick="setLang(&#39;EN&#39;);">EN</td><td onclick="setLang(&#39;GA&#39;);">GA</td></tr></tbody>--></table></div>
+    <h1 class="pagina_login_wellcome">Autenticación usuarios</h1>
+    
+     <div id="id_caja_error" style="display: block;">
+      <div id="id_texterror" class="usuario_corto_ko">Tamaño login demasiado corto (min 3 caracteres)</div><img src="./images/cerrar3.jpg" width="50" height="50" onclick="cerrarMensajeKO();">
+    </div>
+    <form id="id_form_login" name="form_login" action="javascript:login();" onsubmit="return comprobar_form_login();" method="post">
+      <label for="id_usuario">Login Usuario</label>
+      <input type="text" id="id_usuario" name="usuario" onblur="comprobar_usuario();" style="border-color: rgb(255, 0, 0);">
+      <br>
+      <label class="contrasena">Contraseña</label>
+      <input type="password" id="id_contrasena" name="contrasena" onblur="comprobar_contrasena();">
+      <br>
+      <input type="submit" value="enviar">
+    </form>
+    <a href="./registrar.html"><p class="titulo_registrar">Registrar</p></a>
+  
+</body></html>

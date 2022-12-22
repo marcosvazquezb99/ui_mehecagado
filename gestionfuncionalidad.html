@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title class="pagina_funcionalidad_wellcome">Gestión de funcionalidades</title>
+    <script type="text/javascript" src="./js/funcionalidad.js"></script>
+    <script type="text/javascript" src="./locale/idioma.js"></script>
+    <script type="text/javascript" src="./locale/Lang_ES.js"></script>
+    <script type="text/javascript" src="./locale/Lang_EN.js"></script>
+    <script type="text/javascript" src="./locale/Lang_GA.js"></script>
+    <script type="text/javascript" src="./js/validacionesComunes.js"></script>
+    <!--<script type="text/javascript" src="./js/Framework.base.js"></script>-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="./Comun/config.js"></script>
+    <script type="text/javascript" src="./js/md5.js"></script>
+</head>
+<body onload="esta_autenticado();incluircabecera();ponerinvisibleerror();devolverfuncionalidadajax();setLang();">
+
+<h1 class="pagina_funcionalidad_wellcome">Gestión de funcionalidades</h1>
+<div id="id_caja_superior">
+    <table id="id_tabla_idiomas">
+        <!--<tbody><tr><td onclick="setLang(&#39;ES&#39;);">ES</td><td onclick="setLang(&#39;EN&#39;);">EN</td><td onclick="setLang(&#39;GA&#39;);">GA</td></tr></tbody>--></table>
+    <!--Usuario :root<br><a href="javascript:desconectar();">Desconectar</a>--></div>
+<div id="id_caja_error" style="display: none;">
+    <div id="id_texterror"></div>
+    <img src="./images/cerrar3.jpg" width="50" height="50" onclick="cerrarMensajeKO();">
+</div>
+<img src="./images/add4.png" height="80" width="80" onclick="crearformADDfuncionalidad();"
+     alt="Insertar"
+     title="Insertar"><span class="titulo_add">Insertar</span></img>
+<img src="./images/search4.png" height="60" width="60" onclick="crearformSEARCHfuncionalidad();"
+     alt="Buscar" title="Buscar"><span class="titulo_search">Buscar</span></img>
+<div style="max-width: 100%;
+    width: fit-content;
+    max-height: 500px;
+    overflow: auto;">
+    <table id="id_tablafuncionalidad" border="1">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th class="nombre">Nombre funcionalidad</th>
+            <th class="descrip">Descripción</th>
+            <th class="titulo_edit">Editar</th>
+            <th class="titulo_delete">Borrar</th>
+            <th class="titulo_showcurrent">Detalle</th>
+        </tr>
+        </thead>
+        <tbody id="id_datosfuncionalidad">
+        <tr>
+            <td colspan="6" style="text-align: center">No hay datos</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div id="id_caja_formulario_funcionalidad" style="display: none;">
+    <form id="id_form_funcionalidad" name="form_funcionalidad" method="post">
+        <div id="id_box">
+            <label for="id_funcionalidad">id</label>
+            <input type="text" id="id_funcionalidad" name="id_funcionalidad"
+                   title="">
+        </div>
+        <label class="nombre">Nombre</label>
+        <input class="text_formato_nombre_funcionalidad"
+               onblur="comprobar_nombre()"
+               type="text" id="nombre_funcionalidad"
+               name="nombre_funcionalidad"
+               maxlength="48"
+               placeholder="letras sin acentos y números"
+        >
+
+        </input>
+        <br><small style="color: red" class="name_format">Alfabético sin acentos max 48 min 6</small>
+        <br>
+        <label class="descrip">Descripción</label>
+        <input class="text_formato_descrip_funcionalidad"
+               onblur="comprobar_descripcion()"
+               type="text" id="descrip_funcionalidad"
+               name="descrip_funcionalidad"
+               maxlength="200"
+        >
+        </input>
+        <br><small style="color: red" class="descripcion_format">Cualquier caracter excepto ‘=<>$#{}[]’ max 200 min 20</small>
+        <br>
+    </form>
+</div>
+
+<a href="./menu.html"><p class="titulo_volver">Volver</p></a>
+
+</body>
+</html>
