@@ -10,8 +10,9 @@ function deleteAllCookies() {
 }
 
 function desconectar() {
-    deleteAllCookies();
-    window.location.href = "login.html";
+   deleteAllCookies();
+   // console.log('comeme un pie')
+     window.location.href = "login.html";
 }
 
 function redirigir() {
@@ -26,7 +27,21 @@ function redirigir() {
 function incluircabecera() {
 
     $("#id_caja_superior").html = "";
-    let incluir = "<table id='id_tabla_idiomas'>" +
+    $("#leftSidenav").html = "";
+
+    let sidenav = " <a href=\"javascript:void(0)\" class=\"closebtn\" onclick=\"closeNav()\">&times;</a>\n" +
+        "    <a href=\"./gestionpersona.html\" class=\"pagina_persona_wellcome\">Gestión de personas</a>\n" +
+        "    <a href=\"./gestionusuario.html\" class=\"pagina_usuario_wellcome\">Gestión de usuarios</a>\n" +
+        "    <a href=\"./gestionrol.html\" class=\"pagina_rol_wellcome\"></a>\n" +
+        "    <a href=\"./gestionaccion.html\" class=\"pagina_accion_wellcome\"></a>\n" +
+        "    <a href=\"./gestionfuncionalidad.html\" class=\"pagina_funcionalidad_wellcome\"></a>\n" +
+        "    <a href=\"./gestionrolaccionfuncionalidad.html\" class=\"pagina_rolaccionfuncionalidad_wellcome\"></a>\n" +
+        "    <div id=\"id_caja_superior\">\n" +
+        "        <table id=\"id_tabla_idiomas\">\n" +
+        "            <!--<tbody><tr><td onclick=\"setLang(&#39;ES&#39;);\">ES</td><td onclick=\"setLang(&#39;EN&#39;);\">EN</td><td onclick=\"setLang(&#39;GA&#39;);\">GA</td></tr></tbody>--></table>\n" +
+        "        <!--Usuario :root<br><a href=\"javascript:desconectar();\">Desconectar</a>--></div>\n" +
+        "</div>"
+        + "<table style='color: white' id='id_tabla_idiomas'>" +
         "<tr>" +
         "<td onclick=\"setLang(\'ES\');\">ES</td>" +
         "<td onclick=\"setLang(\'EN\');\">EN</td>" +
@@ -34,7 +49,21 @@ function incluircabecera() {
         "</tr>" +
         "</table>";
 
-    $("#id_caja_superior").append(incluir);
+
+
+    $("#leftSidenav").append(sidenav);
+
+
+
+    /*let incluir = "<table style='color: white' id='id_tabla_idiomas'>" +
+        "<tr>" +
+        "<td onclick=\"setLang(\'ES\');\">ES</td>" +
+        "<td onclick=\"setLang(\'EN\');\">EN</td>" +
+        "<td onclick=\"setLang(\'GA\');\">GA</td>" +
+        "</tr>" +
+        "</table>";
+
+    $("#id_caja_superior").append(incluir);*/
 
     if ($('#fechaNacimiento_persona')[0] !== undefined) {
         var today = new Date();
@@ -52,17 +81,28 @@ function incluircabecera() {
 
         today = yyyy + '-' + mm + '-' + dd;
         document.getElementById("fechaNacimiento_persona").setAttribute("max", today);
+
     }
 
+}
+function openNav() {
+    document.getElementById("leftSidenav").style.width = "250px";
+}
+
+function closeNav() {
+        document.getElementById("leftSidenav").style.width = "0";
 }
 
 function esta_autenticado() {
     if ((getCookie('usuarioSistema') === null) || (getCookie('usuarioSistema') === '')) {
         window.location.href = "login.html";
+
     } else {
-        let temp = "<span class='user'>Usuario</span> :" + getCookie('usuarioSistema');
-        temp += "<br><a href='javascript:desconectar();'>Desconectar</a>";
-        $("#id_caja_superior").append(temp);
+
+        let temp = "<span class='user' style='color: white'>Usuario: </span>  <span style='color: white'>" + getCookie('usuarioSistema') +'</span>';
+         temp += "<br><a href='javascript:desconectar();' style='color: white'>Desconectar</a>";
+        $("#leftSidenav").append(temp);
+
     }
 
 }

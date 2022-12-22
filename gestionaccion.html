@@ -5,6 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <title class="pagina_accion_wellcome">Gestión de acciones</title>
+    <link rel="stylesheet" href="css/left_navbar.css">
     <script type="text/javascript" src="./js/accion.js"></script>
     <script type="text/javascript" src="./locale/idioma.js"></script>
     <script type="text/javascript" src="./locale/Lang_ES.js"></script>
@@ -17,12 +18,10 @@
     <script type="text/javascript" src="./js/md5.js"></script>
 </head>
 <body onload="esta_autenticado();incluircabecera();ponerinvisibleerror();devolveraccionajax();setLang();">
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
 
 <h1 class="pagina_accion_wellcome">Gestión de acciones</h1>
-<div id="id_caja_superior">
-    <table id="id_tabla_idiomas">
-        <!--<tbody><tr><td onclick="setLang(&#39;ES&#39;);">ES</td><td onclick="setLang(&#39;EN&#39;);">EN</td><td onclick="setLang(&#39;GA&#39;);">GA</td></tr></tbody>--></table>
-    <!--Usuario :root<br><a href="javascript:desconectar();">Desconectar</a>--></div>
+
 <div id="id_caja_error" style="display: none;">
     <div id="id_texterror"></div>
     <img src="./images/cerrar3.jpg" width="50" height="50" onclick="cerrarMensajeKO();">
@@ -90,6 +89,10 @@
 </div>
 
 <a href="./menu.html"><p class="titulo_volver">Volver</p></a>
+
+<div id="leftSidenav" class="sidenav">
+
+</div>
 
 </body>
 </html>
