@@ -3,6 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     <title>LOGIN</title>
+    <link rel="stylesheet" href="css/modal.css">
     <script type="text/javascript" src="./js/Login.js"></script>
     <script type="text/javascript" src="./js/md5.js"></script>
     <script type="text/javascript" src="./locale/idioma.js"></script>
@@ -21,7 +22,11 @@
      <div id="id_caja_error" style="display: block;">
       <div id="id_texterror" class="usuario_corto_ko">Tamaño login demasiado corto (min 3 caracteres)</div><img src="./images/cerrar3.jpg" width="50" height="50" onclick="cerrarMensajeKO();">
     </div>
-    <form id="id_form_login" name="form_login" action="javascript:login();" onsubmit="return comprobar_form_login();" method="post">
+    <form style="max-width: 100%;
+    width: fit-content;
+    max-height: 500px;
+    background-color: #d4c5e8;
+    overflow: auto;" id="id_form_login" name="form_login" action="javascript:login();" onsubmit="return comprobar_form_login();" method="post">
       <label for="id_usuario">Login Usuario</label>
       <input type="text" id="id_usuario" name="usuario" onblur="comprobar_usuario();" style="border-color: rgb(255, 0, 0);">
       <br>
