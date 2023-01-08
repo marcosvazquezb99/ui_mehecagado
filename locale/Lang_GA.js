@@ -49,11 +49,11 @@ arrayGA={
 		'contrasena_formato_ko': 'El contraseña contiene carecteres no permitidos (solo letras sen acentos e números)',
 		'USUARIO_PASS_KO':'A contrasinal non é correcta',
 		'USUARIO_LOGIN_KO':'Non existe o nome de usuario',
-
+		'rep_contrasena' : 'Repite o contrasinal',
 		'add_usuario_OK':'O usuario insertouse con éxito',
 		'delete_usuario_OK':'O usuario borrouse con éxito',
 		'edit_usuario_OK' : 'O usuario modificouse con éxito',
-
+		'enviar': 'enviar',
 		'dni_NO_EXISTE_en_persona_KO':'Error : Introduza os datos de persoa',
 		'user':'Usuario',
 

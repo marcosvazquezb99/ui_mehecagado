@@ -12,24 +12,34 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="./js/validacionesComunes.js"></script>
     <script type="text/javascript" src="./Comun/config.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/login.css">
   </head>
   <body onload="incluircabecera();ponerinvisibleerror();setLang();">
-    <div id="id_caja_superior">
-    <table id="id_tabla_idiomas"><!--<tbody><tr><td onclick="setLang(&#39;ES&#39;);">ES</td><td onclick="setLang(&#39;EN&#39;);">EN</td><td onclick="setLang(&#39;GA&#39;);">GA</td></tr></tbody>--></table></div>
-    <h1 class="pagina_login_wellcome">Autenticación usuarios</h1>
+    <header><div id='id_caja_superior'></div></header>
+    <div class="box">
+      <h1 class="pagina_login_wellcome"></h1>
+      
+      <div id='id_caja_error'>
+        <div id='id_texterror'></div><img src="./images/cerrar3.png" width="50" height="50" onclick="cerrarMensajeKO();"/>
+      </div>
+      <div class="login">
+        <form id='id_form_login' name='form_login' action='javascript:login();' onsubmit='return comprobar_form_login();' method='post'>
+          <div class="input-container">
+            <input type='text' id='id_usuario' name='usuario' onblur='comprobar_usuario();'required="">
+            <label for="usuario"></label>
+          </div>
+          <div class="input-container">
+            <input type='password' id='id_contrasena' name='contrasena' onblur='comprobar_contrasena();'required="">
+            <label class="contrasena"></label>
+          </div>
+          <button type='submit' class="enviar"></button>
+        </form>
+        <a href='registrar.html'><p class='titulo_registrar'></p></a>
+      </div>   
+  </div> 
     
-     <div id="id_caja_error" style="display: block;">
-      <div id="id_texterror" class="usuario_corto_ko">Tamaño login demasiado corto (min 3 caracteres)</div><img src="./images/cerrar3.jpg" width="50" height="50" onclick="cerrarMensajeKO();">
-    </div>
-    <form id="id_form_login" name="form_login" action="javascript:login();" onsubmit="return comprobar_form_login();" method="post">
-      <label for="id_usuario">Login Usuario</label>
-      <input type="text" id="id_usuario" name="usuario" onblur="comprobar_usuario();" style="border-color: rgb(255, 0, 0);">
-      <br>
-      <label class="contrasena">Contraseña</label>
-      <input type="password" id="id_contrasena" name="contrasena" onblur="comprobar_contrasena();">
-      <br>
-      <input type="submit" value="enviar">
-    </form>
-    <a href="./registrar.html"><p class="titulo_registrar">Registrar</p></a>
-  
-</body></html>
+  </body>
+</html>

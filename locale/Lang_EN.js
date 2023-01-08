@@ -51,11 +51,11 @@ arrayEN = {
     'contrasena_formato_ko': 'Password contains not allowed characters (only letter without accent and numbers are allowed)',
     'USUARIO_PASS_KO': 'Wrong password',
     'USUARIO_LOGIN_KO': 'User name not exists',
-
+    'rep_contrasena' : 'Repeat the password',
     'add_usuario_OK': 'User successfully added',
     'delete_usuario_OK': 'User successfully deleted',
     'edit_usuario_OK': 'User successfully updated',
-
+    'enviar': 'Send',
 
 
     'dni_NO_EXISTE_en_persona_KO': 'Error : Introduzca los datos de persona',

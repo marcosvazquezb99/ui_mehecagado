@@ -32,7 +32,7 @@ arrayES = {
     'pagina_funcionalidad_wellcome': 'Gestión de funcionalidades',
     'pagina_menu_wellcome': 'Menú de aplicación',
     'pagina_rolaccionfuncionalidad_wellcome': 'Gestión de permisos',
-
+    'rep_contrasena' : 'Repite la contraseña',
     'id_dni': 'DNI',
     'usuario': 'Login Usuario',
     'contrasena': 'Contraseña',
@@ -47,7 +47,7 @@ arrayES = {
     'contrasena_formato_ko': 'La contraseña contiene carecteres no permitidos (solo letras sin acentos y números)',
     'USUARIO_PASS_KO': 'La contraseña no es correcta',
     'USUARIO_LOGIN_KO': 'No existe el nombre de usuario',
-
+    'enviar': 'enviar',
     'add_usuario_OK': 'El usuario ha sido insertado con éxito',
     'delete_usuario_OK': 'El usuario ha sido borrado con éxito',
     'edit_usuario_OK': 'El usuario ha sido modificado con éxito',

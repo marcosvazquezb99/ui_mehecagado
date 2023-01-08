@@ -15,154 +15,75 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="./js/validacionesComunes.js"></script>
     <script type="text/javascript" src="./Comun/config.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/registro.css">
 </head>
 <body onload="incluircabecera();ponerinvisibleerror();setLang();">
-<div id="id_caja_superior">
-    <table id="id_tabla_idiomas">
-        <tbody></tbody>
-    </table>
+  <header><div id="id_caja_superior"></div></header>
+  <div class="box">
+  <h1 class="pagina_registrar_wellcome"></h1>
+  
+
+  <div id="id_caja_error">
+      <div id="id_texterror"></div><img src="./images/cerrar3.png" width="50" height="50" onclick="cerrarMensajeKO();">
+  </div>
+
+  <div id="id_caja_formulario_registro">
+      <form id="id_form_registro" action="javascript:registro();" name="form_registro" onsubmit='return comprobar_registro_form();' method="post">
+      <div class="input-container"> 
+        <input  type="text" id="id_dni" name="dni"  onblur="comprobar_dni_persona();"required="">
+        <label for="dni"></label>
+      </div>
+      <div class="input-container">
+        <input  type="text" id="id_nombre_persona" name="nombre_persona"  onblur="comprobar_nombre_persona();"required="">
+        <label for="nombre_persona"></label>
+      </div>
+      <div class="input-container">
+        
+        <input  type="text" id="id_apellido_persona" name="apellidos_persona"  onblur="comprobar_apellidos_persona();"required="">
+        <label for="apellidos_persona"></label>
+      </div>
+      <div class="input-container">
+        <input  type="date" id="id_fechaNacimiento_persona" name="fechaNacimiento_persona" >
+        <label for="fechaNacimiento_persona"></label>
+      </div>
+      <div class="input-container">
+        <input  type="text" id="id_direccion_persona" name="direccion_persona"   onblur="comprobar_direccion_persona();"required="">
+        <label for="direccion_persona"></label>
+      </div>
+      <div class="input-container">
+        <input  type="number" id="id_telefono_persona" name="telefono_persona"  onblur="comprobar_telefono_persona();"required="">
+        <label for="telefono_persona"></label>
+      </div>  
+      <div class="input-container">
+        <input  type="email" id="id_email_persona" name="email_persona"  onblur="comprobar_email_persona();"required="">
+        <label for="email_persona"></label>
+      </div>
+      <div class="input-container">
+        <input  type="text" id="id_foto_persona" name="foto_persona" 
+        onblur="comprobar_imagen_persona();" required=""/>
+        <label for="foto_persona"></label>
+      </div>
+      <div class="input-container">
+        <input  type='text' id='id_usuario' name='usuario' onblur="comprobar_usuario();"required="">
+        <label class="usuario"></label>
+      </div>
+      <div class="input-container">
+        <input  type="password" name="contrasena" id="id_contrasena" onblur="comprobar_contrasena();"required="">
+        <label for="contrasena"></label>
+      </div>
+      <div class="input-container">
+        <input type="password" name="rep_contrasena" id="id_rep_contrasena" onblur="comprobar_repcontrasena();"required="">
+        <label for="rep_contrasena"></label>
+      </div>
+    
+      <button type="submit" class="enviar"></button>
+      </form>
+  </div>
 </div>
-<h1 class="pagina_registrar_wellcome"></h1>
-
-<div id="id_caja_error" style="display: none;">
-    <div id="id_texterror"></div>
-    <img src="./images/cerrar3.jpg" width="50" height="50" onclick="cerrarMensajeKO();">
-</div>
-
-<form id='id_form_login' name='form_login' action='javascript:registrar();' onsubmit='return comprobar_form_login();'
-      method='post'>
-    <form id="id_form_persona" name="form_persona" method="post">
-
-        <label for="id_dni">DNI</label>
-        <input class="text_formato_dni" type="text" id="id_dni" name="dni" placeholder="8 letras y un número"
-               title="8 letras y un número" onblur="comprobar_dni()"></input>
-        <br><small style="color: red" class="dni_format">8 números y una letra </small>
-        <br>
-        <label class="nombre_persona">Nombre</label>
-        <input class="text_formato_nombre_persona"
-               onblur="comprobar_nombre()"
-               type="text" id="nombre_persona"
-               name="nombre_persona"
-               placeholder="letras sin acentos y números"
-        >
-
-        </input>
-        <br><small style="color: red" class="nombre_format">Alfabético con acentos, guión y espacios de máximo 45 y
-        mínimo 3 caracteres</small>
-
-        <br>
-        <label class="apellidos_persona">Apellidos</label>
-        <input class="text_formato_apellidos_persona"
-               onblur="comprobar_apellido()"
-               type="text" id="apellidos_persona"
-               name="apellidos_persona"
-
-        >
-
-        </input>
-        <br> <small style="color: red" class="apellidos_format">Alfabético con acentos, guión y espacios de máximo 100 y
-        mínimo 5 caracteres</small>
-        <br>
-        <label class="fechaNacimiento_persona">Fecha de naciomiento</label>
-        <input class="text_formato_fechaNacimiento_persona"
-               onblur="comprobar_fechaNacimiento()"
-               type="date" id="fechaNacimiento_persona"
-               name="fechaNacimiento_persona"
-
-        >
-
-        </input>
-        <br><small style="color: red" class="fechaNacimiento_format">Fecha válida de 2 números para día, dos números
-        para mes y cuatro números para año, / como caracter de separación</small>
-        <br>
-        <label class="direccion_persona">Dirección</label>
-        <input class="text_formato_direccion_persona"
-               onblur="comprobar_direccion()"
-               type="text" id="direccion_persona"
-               name="direccion_persona"
-
-        >
-
-        </input>
-        <br><small style="color: red" class="direccion_format">Alfabético con acentos, números, espacios,
-            ‘/’,’-’,’,’,’º’,‘ª’, máximo 200 y mínimo 10 caracteres</small>
-        <br>
-        <label class="telefono_persona">Teléfono</label>
-        <input class="text_formato_telefono_persona"
-               onblur="comprobar_telefono()"
-               type="text" id="telefono_persona"
-               name="telefono_persona"
-
-        >
-
-        </input>
-        <br><small style="color: red" class="telefono_format">Número de teléfono válido formato de España de 9
-        dígitos</small>
-        <br>
-        <label class="email_persona">Email</label>
-        <input class="text_formato_email_persona"
-               onblur="comprobar_email()"
-               type="email" id="email_persona"
-               name="email_persona"
-
-        >
-
-        </input>
-        <br><small style="color: red" class="email_format">Email válido máximo 45 y mínimo 8 caracteres (correo@algo.com)</small>
-        <br>
-        <label class="foto_persona">Foto persona</label>
-        <input class="text_formato_foto_persona"
-               onblur="comprobar_foto()"
-               type="text" id="foto_persona"
-               name="foto_persona"
-
-        >
-
-        </input>
-        <br><small style="color: red" class="foto_format">Alfabético sin acentos con extensión jpg o png con máximo 40 y mínimo 6 caracteres</small>
-        <br>
-        <label class="usuario">Usuario</label>
-        <input class="text_formato_foto_persona"
-               onblur="comprobar_usuario()"
-               type="text" id="id_usuario"
-               name="usuario"
-
-        >
-
-        </input>
-        <br><small style="color: red" class="usuario_format">Alfabético sin acentos, números max 45 min 3</small>
-        <br>
-        <label class="contrasena">Contraseña</label>
-        <input class="text_formato_foto_persona"
-               onblur="comprobar_contrasena()"
-               type="password" id="id_contrasena"
-               name="contrasena"
-
-        >
-
-        </input>
-        <br><small style="color: red" class="contrasena_format">Alfabético sin acentos, números,’-’,’_’ max 45 min 3</small>
-
-        <br>
-        <label class="repetir_contrasena">Repetir contraseña</label>
-        <input class="text_formato_foto_persona"
-               onblur="check_password_equal()"
-               type="password" id="repetir_contrasena"
-               name="foto_persona"
-
-        >
-
-        </input><br>
-        <input type="submit" value="enviar">
-
-        </input>
-        <br>
-
-    </form>
-</form>
-
-<a href="./login.html"><p class="titulo_volver">Volver</p></a>
-
-<div id="naptha_container0932014_0707"></div>
 </body>
+
+
 </html>
