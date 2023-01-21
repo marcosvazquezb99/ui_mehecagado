@@ -162,6 +162,10 @@ function ponervisible(idElemento) {
     document.getElementById(idElemento).style.display = 'block';
 }
 
+function ponerinvisibleformrecuperarcontrasena(){
+	document.getElementById('id_caja_formulario_recuperar_contrasena').style.display = 'none';
+}
+
 function mensajeKO(idElemento, codigoerror) {
     document.getElementById('id_texterror')
         .classList.forEach((value) => {
