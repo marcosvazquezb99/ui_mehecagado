@@ -167,14 +167,14 @@ function mensajeKO(idElemento, codigoerror) {
 // despues de pone la ventana de error como invisible
 function cerrarMensajeKO() {
 
-    codigos = String(document.getElementById('id_texterror').classList);
+    codigos = String(document.getElementById('snackbar').classList);
     codigos = codigos.split(' ');
     for (let codigo of codigos) {
-        document.getElementById('id_texterror').classList.remove(codigo);
+        document.getElementById('snackbar').classList.remove(codigo);
     }
-    document.getElementById('id_texterror').innerHTML = '';
-    document.getElementById('id_caja_error').style.borderColor = "";
-    document.getElementById('id_caja_error').style.display = 'none';
+    document.getElementById('snackbar').innerHTML = '';
+    document.getElementById('snackbar').style.borderColor = "";
+    document.getElementById('snackbar').style.display = 'none';
 
 }
 
@@ -187,14 +187,17 @@ function mensajeOK(idElemento) {
 }
 
 function mensajeactionOK(codigo) {
-    document.getElementById('id_texterror')
+    document.getElementById('snackbar')
         .classList.forEach((value) => {
-        document.getElementById('id_texterror').classList.remove(value)
+        document.getElementById('snackbar').classList.remove(value)
     })
     //document.getElementById('id_texterror').innerHTML = codigo;
-    document.getElementById('id_texterror').classList.add(codigo);
-    document.getElementById('id_caja_error').style.borderColor = "#00e600";
-    document.getElementById('id_caja_error').style.display = 'block';
+    var x = document.getElementById("snackbar");
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    document.getElementById('snackbar').classList.add(codigo);
+    document.getElementById('snackbar').style.borderColor = "#00e600";
+    document.getElementById('snackbar').style.display = 'block';
     setLang();
 
 }
