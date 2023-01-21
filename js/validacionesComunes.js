@@ -442,6 +442,19 @@ function checkRolDescription(value) {
 }
 
 
+function closeModal() {
+    document.getElementsByTagName('details')[0].removeAttribute('open');
+return true
+
+}
+
+function openModal() {
+    document.getElementsByTagName('details')[0].setAttribute('open', '');
+
+
+}
+
+
 
 
 

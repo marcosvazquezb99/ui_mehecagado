@@ -19,6 +19,7 @@ function devolverrolAjaxPromesa() {
             if (res.ok != true) {
                 reject(res);
             } else {
+                closeModal()
                 resolve(res);
             }
         })
@@ -87,6 +88,7 @@ function rolADDAjaxPromesa() {
             if (res.ok != true) {
                 reject(res);
             } else {
+                closeModal();
                 resolve(res);
             }
         })
@@ -163,7 +165,7 @@ function crearformADDrol() {
 
     // se muestra el formulario
     document.getElementById('id_caja_formulario_rol').style.display = 'block';
-
+    openModal();
 }
 
 ///////EDIT////////////////
@@ -212,7 +214,7 @@ function crearformEDITrol(
 
     // se muestra el formulario
     $("#id_caja_formulario_rol").attr('style', 'display: block');
-
+    openModal();
 }
 
 
@@ -231,6 +233,7 @@ function rolEDITAjaxPromesa() {
             if (res.ok != true) {
                 reject(res);
             } else {
+                closeModal();
                 resolve(res);
             }
         })
@@ -308,6 +311,7 @@ function crearformDELETErol(
     setLang();
 
     $("#id_caja_formulario_rol").attr('style', 'display: block');
+    openModal()
 }
 
 //Función ajax con promesas
@@ -322,9 +326,10 @@ function rolDELETEAjaxPromesa() {
             url: urlPeticionesAjax,
             data: $("#id_form_rol").serialize(),
         }).done(res => {
-            if (res.ok != true) {
+            if (res.ok !== true) {
                 reject(res);
             } else {
+                closeModal();
                 resolve(res);
             }
         })
@@ -342,6 +347,7 @@ async function DELETErolajax() {
         .then((res) => {
 
             if (res.code == 'SQL_OK') {
+                closeModal();
                 res.code = 'delete_rol_OK';
             }
             mensajeactionOK(res.code);
@@ -388,6 +394,9 @@ function crearformSHOWCURRENTrol(
     accionsubmit = document.createElement("button");
     accionsubmit.type = 'submit';
     accionsubmit.id = 'id_accionsubmit';
+    accionsubmit.addEventListener("click", function (){
+        closeModal()
+    })
     $("#id_form_rol").append(accionsubmit);
 
     // se coloca una imagen para button anterior en el formulario
@@ -403,7 +412,7 @@ function crearformSHOWCURRENTrol(
 
     $("#id_caja_formulario_rol").attr('style', 'display: block');
 
-
+    openModal();
 }
 
 
@@ -443,7 +452,7 @@ function resetearformrol() {
 
 
 /////////////////SEARCH/////////////
-function crearformSEARCHrol() {
+function SEARCHrol() {
 
     // reseteo el formulario
     resetearformrol();
@@ -465,6 +474,7 @@ function crearformSEARCHrol() {
     accionsubmit = document.createElement("button");
     accionsubmit.type = 'submit';
     accionsubmit.id = 'id_accionsubmit';
+
     $("#id_form_rol").append(accionsubmit);
 
     // se coloca una imagen para button anterior en el formulario
@@ -480,6 +490,7 @@ function crearformSEARCHrol() {
 
     // se pone visible el formulario
     $("#id_caja_formulario_rol").attr('style', 'display: block');
+    openModal();
 }
 
 //Función ajax con promesas
@@ -497,6 +508,7 @@ function rolSEARCHAjaxPromesa() {
             if (res.ok != true) {
                 reject(res);
             } else {
+                closeModal();
                 resolve(res);
             }
         })
@@ -570,6 +582,7 @@ function devolverrolesAjaxPromesa() {
             if (res.ok != true) {
                 reject(res);
             } else {
+                closeModal();
                 resolve(res);
             }
         })

@@ -11,7 +11,7 @@ function devolverfuncionalidadAjaxPromesa() {
             url: urlPeticionesAjax,
             data: $("#form_generico").serialize(),
         }).done(res => {
-            if (res.ok != true) {
+            if (res.ok !== true) {
                 reject(res);
             } else {
                 resolve(res);

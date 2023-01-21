@@ -14,6 +14,7 @@ function devolverrolaccionfuncionalidadAjaxPromesa() {
             if (res.ok != true) {
                 reject(res);
             } else {
+                closeModal();
                 resolve(res);
             }
         })
@@ -123,17 +124,17 @@ function formatData(funcionalidad, accion, roles, rolaccionfuncionalidad) {
     return result;
 }
 
-function checRadioButton(rolaccionfuncionalidad, id ,add = true) {
+function checRadioButton(rolaccionfuncionalidad, id, add = true) {
     let codigo = '';
-    if (id &&rolaccionfuncionalidad) {
-        id = id.replace("'","").replace("'","");
+    if (id && rolaccionfuncionalidad) {
+        id = id.replace("'", "").replace("'", "");
         for (let raf of rolaccionfuncionalidad) {
             codigo = raf.id_funcionalidad.id_funcionalidad + "_" + raf.id_accion.id_accion + "_" + raf.id_rol.id_rol;
             if (codigo == id) {
                 return add ? 'checked' : '';
             }
         }
-        return add ? '':'checked';
+        return add ? '' : 'checked';
     }
 
 
@@ -155,6 +156,7 @@ function devolverrolAjaxPromesa() {
             if (res.ok != true) {
                 reject(res);
             } else {
+                closeModal();
                 resolve(res);
             }
         })
@@ -214,6 +216,7 @@ function devolverfuncionalidadAjaxPromesa() {
             if (res.ok != true) {
                 reject(res);
             } else {
+                closeModal();
                 resolve(res);
             }
         })
@@ -255,6 +258,7 @@ function devolveraccionAjaxPromesa() {
             if (res.ok != true) {
                 reject(res);
             } else {
+                closeModal();
                 resolve(res);
             }
         })
@@ -296,6 +300,7 @@ function rolaccionfuncionalidadADDAjaxPromesa(data) {
             if (res.ok != true) {
                 reject(res);
             } else {
+                closeModal();
                 resolve(res);
             }
         })
@@ -321,6 +326,7 @@ async function ADDrolaccionfuncionalidadajax(data) {
         .then((res) => {
 
             if (res.code == 'SQL_OK') {
+                closeModal();
                 res.code = 'add_rolaccionfuncionalidad_OK';
             }
             ;
@@ -362,6 +368,9 @@ function crearformADDrolaccionfuncionalidad() {
     rolaccionfuncionalidadsubmit = document.createElement("button");
     rolaccionfuncionalidadsubmit.type = 'submit';
     rolaccionfuncionalidadsubmit.id = 'id_rolaccionfuncionalidadsubmit';
+    accionsubmit.addEventListener("click", function () {
+        closeModal()
+    })
     $("#id_form_rolaccionfuncionalidad").append(rolaccionfuncionalidadsubmit);
 
     // se coloca la imagen para el button submit
@@ -377,7 +386,7 @@ function crearformADDrolaccionfuncionalidad() {
 
     // se muestra el formulario
     document.getElementById('id_caja_formulario_rolaccionfuncionalidad').style.display = 'block';
-
+    openModal();
 }
 
 ///////EDIT////////////////
@@ -424,6 +433,7 @@ function crearformEDITrolaccionfuncionalidad(
 
     // se muestra el formulario
     $("#id_caja_formulario_rolaccionfuncionalidad").attr('style', 'display: block');
+    openModal()
 }
 
 
@@ -441,6 +451,7 @@ function rolaccionfuncionalidadEDITAjaxPromesa(data) {
             if (res.ok != true) {
                 reject(res);
             } else {
+                closeModal();
                 resolve(res);
             }
         })
@@ -510,6 +521,7 @@ function crearformDELETErolaccionfuncionalidad(
     rolaccionfuncionalidadsubmit = document.createElement("button");
     rolaccionfuncionalidadsubmit.type = 'submit';
     rolaccionfuncionalidadsubmit.id = 'id_rolaccionfuncionalidadsubmit';
+
     $("#id_form_rolaccionfuncionalidad").append(rolaccionfuncionalidadsubmit);
 
     // se coloca la imagen en el button submit
@@ -524,6 +536,7 @@ function crearformDELETErolaccionfuncionalidad(
     setLang();
 
     $("#id_caja_formulario_rolaccionfuncionalidad").attr('style', 'display: block');
+    openModal();
 }
 
 //Función ajax con promesas
@@ -540,6 +553,7 @@ function rolaccionfuncionalidadDELETEAjaxPromesa(data) {
             if (res.ok != true) {
                 reject(res);
             } else {
+                closeModal();
                 resolve(res);
             }
         })
@@ -609,6 +623,9 @@ function crearformSHOWCURRENTrolaccionfuncionalidad(
     rolaccionfuncionalidadsubmit = document.createElement("button");
     rolaccionfuncionalidadsubmit.type = 'submit';
     rolaccionfuncionalidadsubmit.id = 'id_rolaccionfuncionalidadsubmit';
+    rolaccionfuncionalidadsubmit.addEventListener("click", function (){
+        closeModal()
+    })
     $("#id_form_rolaccionfuncionalidad").append(rolaccionfuncionalidadsubmit);
 
     // se coloca una imagen para button anterior en el formulario
@@ -624,7 +641,7 @@ function crearformSHOWCURRENTrolaccionfuncionalidad(
 
     $("#id_caja_formulario_rolaccionfuncionalidad").attr('style', 'display: block');
 
-
+    openModal();
 }
 
 
@@ -701,6 +718,7 @@ function crearformSEARCHrolaccionfuncionalidad() {
 
     // se pone visible el formulario
     $("#id_caja_formulario_rolaccionfuncionalidad").attr('style', 'display: block');
+    openModal();
 }
 
 //Función ajax con promesas
@@ -718,6 +736,7 @@ function rolaccionfuncionalidadSEARCHAjaxPromesa() {
             if (res.ok != true) {
                 reject(res);
             } else {
+                closeModal();
                 resolve(res);
             }
         })
