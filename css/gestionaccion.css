@@ -35,7 +35,6 @@ body {
     font-size: 36px;
     margin-left: 50px;
 }
-
 h1{
     width: 50%;
     margin: 0 auto;
@@ -49,16 +48,7 @@ h1{
     margin: 0 auto;
   }
   
-  .table {
-     border-collapse: collapse; 
-     margin: 25px 0; font-size: 1em; 
-     font-family: sans-serif; min-width: 450px; 
-     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); 
-     overflow: auto;
-     max-width: 100%;
-     width: fit-content;
-     max-height: 500px;
-    }
+  .table { border-collapse: collapse; margin: 25px 0; font-size: 1em; font-family: sans-serif; min-width: 450px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); }
 
   .table thead tr { background-color: #980081; color: #ffffff; text-align: middle; }
   
@@ -86,7 +76,6 @@ h1{
     margin: 0 auto;
 
   }
-
 
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}

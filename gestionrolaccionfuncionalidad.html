@@ -39,6 +39,7 @@
             opacity: 0.2;
         }
     </style>
+    <link rel="stylesheet" href="./css/gestionrolaccionfuncionalidad.css">
 </head>
 <body onload="esta_autenticado();incluircabecera();ponerinvisibleerror();devolverrolaccionfuncionalidadajax();setLang(); appendToTbody()">
 <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
@@ -53,11 +54,8 @@
     <img src="./images/cerrar3.jpg" width="50" height="50" onclick="cerrarMensajeKO();">
 </div>
 
-<div style="max-width: 100%;
-    width: fit-content;
-    max-height: 500px;
-    overflow: auto;">
-    <table style="table-layout: fixed" id="id_tablarolaccionfuncionalidad" border="1">
+<div class="table-wrapper">
+    <table class="table" id="id_tablarolaccionfuncionalidad" border="1">
         <thead>
         <tr id="tr_tablarolaccionfuncionalidad">
 
