@@ -17,6 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/login.css">
     <link rel="stylesheet" href="./css/snackbar.css">
+    <link rel="stylesheet" href="./css/modal.css">
   </head>
   <body onload="incluircabecera();ponerinvisibleerror();setLang();">
     <header><div id='id_caja_superior'></div></header>
@@ -54,15 +55,18 @@
   }
   </script>
 
+  <!-- The Modal -->
   <div id="modal" class="modal">
 
     <!-- Modal content -->
     <div class="modal-content">
-      <span class="close">&times;</span>
-      <p>Some text in the Modal..</p>
+      <span class="close"></span>
+        <div id='id_texto_mensaje_accion'></div>
     </div>
-  
+
   </div>
+
+
 
   </body>
 </html>

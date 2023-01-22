@@ -19,6 +19,7 @@ arrayES = {
     'prohibido_edit_rolaccionfuncionalidad': 'El permiso no se puede editar',
     'permiso_NO_EXISTE_en_rolaccionfuncionalidad_KO': 'El permiso no existe',
     'no_puede_borrar_permiso_admin': 'El permiso no se puede borrar',
+    'no_puede_borrar_rol_adminybasico': 'El rol admin y básico no se pueden borrar',
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     /////////////////////////////////////////usuario////////////////////////////////////////////////

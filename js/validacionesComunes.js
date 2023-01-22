@@ -149,7 +149,6 @@ function mensajeKO(idElemento, codigoerror) {
         document.getElementById('id_texterror').classList.remove(value)
     })
     document.getElementById('id_texterror').classList.add(codigoerror);
-    //document.getElementById('id_texterror').innerHTML = codigoerror;
     document.getElementById('id_caja_error').style.display = 'block';
     document.getElementById(idElemento).style.borderColor = "#ff0000";
     setLang();
@@ -167,14 +166,14 @@ function mensajeKO(idElemento, codigoerror) {
 // despues de pone la ventana de error como invisible
 function cerrarMensajeKO() {
 
-    codigos = String(document.getElementById('snackbar').classList);
+    codigos = String(document.getElementById('id_caja_error').classList);
     codigos = codigos.split(' ');
     for (let codigo of codigos) {
-        document.getElementById('snackbar').classList.remove(codigo);
+        document.getElementById('id_caja_error').classList.remove(codigo);
     }
-    document.getElementById('snackbar').innerHTML = '';
-    document.getElementById('snackbar').style.borderColor = "";
-    document.getElementById('snackbar').style.display = 'none';
+    document.getElementById('id_caja_error').innerHTML = '';
+    document.getElementById('id_caja_error').style.borderColor = "";
+    document.getElementById('id_caja_error').style.display = 'none';
 
 }
 
@@ -192,27 +191,39 @@ function mensajeactionOK(codigo) {
         document.getElementById('snackbar').classList.remove(value)
     })
     //document.getElementById('id_texterror').innerHTML = codigo;
+    
     var x = document.getElementById("snackbar");
     x.className = "show";
     setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
     document.getElementById('snackbar').classList.add(codigo);
     document.getElementById('snackbar').style.borderColor = "#00e600";
     document.getElementById('snackbar').style.display = 'block';
+
+    mensajeModal(codigo);
+
     setLang();
 
 }
 
 function mensajeFAIL(codigoerror) {
 
-    //document.getElementById('id_texterror').innerHTML = codigoerror;
-    document.getElementById('id_texterror')
-        .classList.forEach((value) => {
-        document.getElementById('id_texterror').classList.remove(value)
-    })
-    document.getElementById('id_texterror').classList.add(codigoerror);
-    document.getElementById('id_caja_error').style.display = 'block';
-    setLang();
+    mensajeModal(codigoerror);
 
+}
+
+function mensajeModal(codigo){
+    var modal = document.getElementById("modal");
+    var span = document.getElementsByClassName("close")[0];
+    document.getElementById("id_texto_mensaje_accion").classList.add(codigo);
+    modal.style.display = "block";
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+    }
 }
 
 /**Función para mostrar mensaje de error cuando fallan las peticiones ajax*/
