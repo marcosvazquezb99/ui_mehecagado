@@ -92,8 +92,65 @@ async function appendToTbody() {
     $("#id_datosrolaccionfuncionalidad").html('');
     $("#id_datosrolaccionfuncionalidad").append(result);
     checRadioButton();
+    //We need to call this function to create a pagination
+    createpagination();
 
     //$("#id_datosrolaccionfuncionalidad").append(lineatabla);
+}
+
+function createpagination() {
+    $("#id_datosrolaccionfuncionalidad").after('<div id="nav"></div>');
+    var rowsShown = 5;
+    var rowsTotal = $('#id_datosrolaccionfuncionalidad tr').length;
+    var numPages = rowsTotal / rowsShown;
+    for (i = 0; i < numPages; i++) {
+        var pageNum = i + 1;
+        $('#nav').append('<a href="#" rel="' + i + '">' + pageNum + '</a> ');
+    }
+    $('#id_datosrolaccionfuncionalidad tr').hide();
+    $('#id_datosrolaccionfuncionalidad tr').slice(0, rowsShown).show();
+    $('#nav a:first').addClass('active');
+    $('#nav a').bind('click', function () {
+
+        $('#nav a').removeClass('active');
+        $(this).addClass('active');
+        var currPage = $(this).attr('rel');
+        var startItem = currPage * rowsShown;
+        var endItem = startItem + rowsShown;
+        $('#id_datosrolaccionfuncionalidad tr').css('opacity', '0.0').hide().slice(startItem, endItem).
+            css('display', 'table-row').animate({ opacity: 1 },300);
+    });
+    
+    $('#id_datosrolaccionfuncionalidad').after('<div id="nav2"></div>');
+   //add the next and previous buttons that move one page forward or back, dont show all the pages and dont let the use the prev or next button when they are on the first or last page
+    $('#nav2').append('<a href="#" rel="prev">Prev</a> ');
+    $('#nav2').append('<a href="#" rel="next">Next</a> ');
+    $('#nav2 a:first').addClass('active');
+    $('#nav2 a').bind('click', function () {
+        var currPage = $('#nav a.active').attr('rel');
+        if ($(this).attr('rel') == 'prev') {
+            currPage--;
+        } else {
+            currPage++;
+        }
+        $('#nav a').removeClass('active');
+        $('#nav a[rel=' + currPage + ']').addClass('active');
+        $('#nav a[rel=' + currPage + ']').trigger('click');
+        if (currPage == 0) {
+            $('#nav2 a[rel=prev]').hide();
+        } else {
+            $('#nav2 a[rel=prev]').show();
+        }
+        if (currPage == numPages - 1) {
+            $('#nav2 a[rel=next]').hide();
+        } else {
+            $('#nav2 a[rel=next]').show();
+        }
+    });
+    $('#nav2 a[rel=prev]').hide(); 
+    //dont show the number of pages
+    $('#nav').hide();
+
 }
 
 function formatData(funcionalidad, accion, roles, rolaccionfuncionalidad) {
@@ -744,6 +801,10 @@ async function SEARCHrolaccionfuncionalidadAjax() {
     resetearformrolaccionfuncionalidad();
 
 }
+
+//Pagination
+
+
 
 
 //////////CHECKS/////////////
