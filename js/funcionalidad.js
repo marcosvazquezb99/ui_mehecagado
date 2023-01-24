@@ -11,7 +11,7 @@ function devolverfuncionalidadAjaxPromesa() {
             url: urlPeticionesAjax,
             data: $("#form_generico").serialize(),
         }).done(res => {
-            if (res.ok != true) {
+            if (res.ok !== true) {
                 reject(res);
             } else {
                 resolve(res);
@@ -82,6 +82,7 @@ function funcionalidadADDAjaxPromesa() {
             if (res.ok != true) {
                 reject(res);
             } else {
+                closeModal()
                 resolve(res);
             }
         })
@@ -92,20 +93,16 @@ function funcionalidadADDAjaxPromesa() {
 }
 
 
-
-
-
-
-
-
 async function ADDfuncionalidadajax() {
-
+    if (!comprobar_nombre() || !comprobar_descripcion())
+        return false
     var idioma = getCookie('lang');
 
     await funcionalidadADDAjaxPromesa()
         .then((res) => {
 
             if (res.code == 'SQL_OK') {
+                closeModal()
                 res.code = 'add_funcionalidad_OK';
             }
             ;
@@ -147,6 +144,9 @@ function crearformADDfuncionalidad() {
     accionsubmit = document.createElement("button");
     accionsubmit.type = 'submit';
     accionsubmit.id = 'id_accionsubmit';
+    accionsubmit.addEventListener("click", function () {
+        closeModal()
+    })
     $("#id_form_funcionalidad").append(accionsubmit);
 
     // se coloca la imagen para el button submit
@@ -162,6 +162,7 @@ function crearformADDfuncionalidad() {
 
     // se muestra el formulario
     document.getElementById('id_caja_formulario_funcionalidad').style.display = 'block';
+    openModal();
 
 }
 
@@ -210,6 +211,7 @@ function crearformEDITfuncionalidad(
 
     // se muestra el formulario
     $("#id_caja_formulario_funcionalidad").attr('style', 'display: block');
+    openModal();
 }
 
 
@@ -228,6 +230,7 @@ function funcionalidadEDITAjaxPromesa() {
             if (res.ok != true) {
                 reject(res);
             } else {
+                closeModal()
                 resolve(res);
             }
         })
@@ -238,7 +241,8 @@ function funcionalidadEDITAjaxPromesa() {
 }
 
 async function EDITfuncionalidadajax() {
-
+    if (!comprobar_nombre() || !comprobar_descripcion())
+        return false
     var idioma = getCookie('lang');
 
     await funcionalidadEDITAjaxPromesa()
@@ -269,11 +273,11 @@ async function EDITfuncionalidadajax() {
 
 function crearformDELETEfuncionalidad(
     id_funcionalidad, nombre_funcionalidad, descrip_funcionalidad
-){
+) {
 
     resetearformfuncionalidad();
 
-    $("#id_form_funcionalidad").attr('action','javascript:DELETEfuncionalidadajax()');
+    $("#id_form_funcionalidad").attr('action', 'javascript:DELETEfuncionalidadajax()');
 
     $("#id_funcionalidad").attr('readonly', true);
     //$("#id_dni").blur(comprobar_dni);
@@ -296,7 +300,7 @@ function crearformDELETEfuncionalidad(
     botonsubmit = document.createElement("img");
     botonsubmit.id = "id_boton_buscar_funcionalidad";
     botonsubmit.className = 'titulo_search';
-    botonsubmit.src= "./images/delete4.png";
+    botonsubmit.src = "./images/delete4.png";
     botonsubmit.width = '80';
     botonsubmit.height = '80';
     $("#id_accionsubmit").append(botonsubmit);
@@ -304,15 +308,16 @@ function crearformDELETEfuncionalidad(
     setLang();
 
     $("#id_caja_formulario_funcionalidad").attr('style', 'display: block');
+    openModal()
 }
 
 //Función ajax con promesas
-function funcionalidadDELETEAjaxPromesa(){
+function funcionalidadDELETEAjaxPromesa() {
 
-    insertacampo('id_form_funcionalidad','controlador', 'funcionalidad');
-    insertacampo('id_form_funcionalidad','action', 'DELETE');
+    insertacampo('id_form_funcionalidad', 'controlador', 'funcionalidad');
+    insertacampo('id_form_funcionalidad', 'action', 'DELETE');
 
-    return new Promise(function(resolve, reject) {
+    return new Promise(function (resolve, reject) {
         $.ajax({
             method: "POST",
             url: urlPeticionesAjax,
@@ -320,12 +325,12 @@ function funcionalidadDELETEAjaxPromesa(){
         }).done(res => {
             if (res.ok != true) {
                 reject(res);
-            }
-            else{
+            } else {
+                closeModal()
                 resolve(res);
             }
         })
-            .fail( function( jqXHR ) {
+            .fail(function (jqXHR) {
                 mensajeHTTPFAIL(jqXHR.status);
             });
     });
@@ -338,7 +343,7 @@ async function DELETEfuncionalidadajax() {
     await funcionalidadDELETEAjaxPromesa()
         .then((res) => {
 
-            if (res.code == 'SQL_OK'){
+            if (res.code == 'SQL_OK') {
                 res.code = 'delete_funcionalidad_OK';
             }
             mensajeactionOK(res.code);
@@ -355,19 +360,19 @@ async function DELETEfuncionalidadajax() {
 }
 
 /////////////SHOW CURRENT///////////
-function cerrarSHOWCURRENT(){
+function cerrarSHOWCURRENT() {
     $("#id_caja_formulario_funcionalidad").attr('style', 'display: none');
     $("#id_imagen_enviar_form").attr('style', 'display: none');
 }
+
 function crearformSHOWCURRENTfuncionalidad(
     id_funcionalidad, nombre_funcionalidad, descrip_funcionalidad
-
-){
+) {
 
     // reseteo el formulario
     resetearformfuncionalidad();
 
-    $("#id_form_funcionalidad").attr('action','javascript:cerrarSHOWCURRENT()');
+    $("#id_form_funcionalidad").attr('action', 'javascript:cerrarSHOWCURRENT()');
 
     $("#id_funcionalidad").attr('readonly', true);
     //$("#id_dni").blur(comprobar_dni);
@@ -391,7 +396,7 @@ function crearformSHOWCURRENTfuncionalidad(
     botonsubmit = document.createElement("img");
     botonsubmit.id = "id_boton_buscar_funcionalidad";
     botonsubmit.className = 'titulo_search';
-    botonsubmit.src= "./images/detail4.png";
+    botonsubmit.src = "./images/detail4.png";
     botonsubmit.width = '80';
     botonsubmit.height = '80';
     $("#id_accionsubmit").append(botonsubmit);
@@ -399,10 +404,10 @@ function crearformSHOWCURRENTfuncionalidad(
     setLang();
 
     $("#id_caja_formulario_funcionalidad").attr('style', 'display: block');
+    openModal()
 
 
 }
-
 
 
 // resetearformfuncionalidad()
@@ -442,13 +447,13 @@ function resetearformfuncionalidad() {
 
 
 /////////////////SEARCH/////////////
-function crearformSEARCHfuncionalidad(){
+function crearformSEARCHfuncionalidad() {
 
     // reseteo el formulario
     resetearformfuncionalidad();
 
     // creo la accion para el formulario y el onsubmit
-    $("#id_form_funcionalidad").attr('action','javascript:SEARCHfuncionalidadAjax()');
+    $("#id_form_funcionalidad").attr('action', 'javascript:SEARCHfuncionalidadAjax()');
     //$("#id_form_funcionalidad").on('submit', search_funcionalidad);
 
     // pongo el campo de dni editable y le asocio la funcion para el onblur
@@ -470,7 +475,7 @@ function crearformSEARCHfuncionalidad(){
     botonsubmit = document.createElement("img");
     botonsubmit.id = "id_boton_buscar_funcionalidad";
     botonsubmit.className = 'titulo_search';
-    botonsubmit.src= "./images/search4.png";
+    botonsubmit.src = "./images/search4.png";
     botonsubmit.width = '80';
     botonsubmit.height = '80';
     $("#id_accionsubmit").append(botonsubmit);
@@ -479,15 +484,16 @@ function crearformSEARCHfuncionalidad(){
 
     // se pone visible el formulario
     $("#id_caja_formulario_funcionalidad").attr('style', 'display: block');
+    openModal()
 }
 
 //Función ajax con promesas
-function funcionalidadSEARCHAjaxPromesa(){
+function funcionalidadSEARCHAjaxPromesa() {
 
-    insertacampo('id_form_funcionalidad','contfuncionalidadador', 'funcionalidad');
-    insertacampo('id_form_funcionalidad','action', 'SEARCH');
+    insertacampo('id_form_funcionalidad', 'contfuncionalidadador', 'funcionalidad');
+    insertacampo('id_form_funcionalidad', 'action', 'SEARCH');
 
-    return new Promise(function(resolve, reject) {
+    return new Promise(function (resolve, reject) {
         $.ajax({
             method: "POST",
             url: urlPeticionesAjax,
@@ -495,12 +501,12 @@ function funcionalidadSEARCHAjaxPromesa(){
         }).done(res => {
             if (res.ok != true) {
                 reject(res);
-            }
-            else{
+            } else {
+                closeModal()
                 resolve(res);
             }
         })
-            .fail( function( jqXHR ) {
+            .fail(function (jqXHR) {
                 mensajeHTTPFAIL(jqXHR.status);
             });
     });

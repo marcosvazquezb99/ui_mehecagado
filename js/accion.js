@@ -14,6 +14,7 @@ function devolveraccionAjaxPromesa() {
             if (res.ok != true) {
                 reject(res);
             } else {
+                closeModal();
                 resolve(res);
             }
         })
@@ -82,6 +83,7 @@ function accionADDAjaxPromesa() {
             if (res.ok != true) {
                 reject(res);
             } else {
+                closeModal()
                 resolve(res);
             }
         })
@@ -99,13 +101,16 @@ function accionADDAjaxPromesa() {
 
 
 async function ADDaccionajax() {
-
+if(!comprobar_descripcion() || !comprobar_nombre()){
+    return false
+}
     var idioma = getCookie('lang');
 
     await accionADDAjaxPromesa()
         .then((res) => {
 
             if (res.code == 'SQL_OK') {
+                closeModal();
                 res.code = 'add_accion_OK';
             }
             ;
@@ -163,7 +168,7 @@ function crearformADDaccion() {
 
     // se muestra el formulario
     document.getElementById('id_caja_formulario_accion').style.display = 'block';
-
+openModal();
 }
 
 ///////EDIT////////////////
@@ -211,6 +216,7 @@ function crearformEDITaccion(
 
     // se muestra el formulario
     $("#id_caja_formulario_accion").attr('style', 'display: block');
+    openModal()
 }
 
 
@@ -229,6 +235,7 @@ function accionEDITAjaxPromesa() {
             if (res.ok != true) {
                 reject(res);
             } else {
+                closeModal();
                 resolve(res);
             }
         })
@@ -239,7 +246,9 @@ function accionEDITAjaxPromesa() {
 }
 
 async function EDITaccionajax() {
-
+    if(!comprobar_descripcion() || !comprobar_nombre()){
+        return false;
+    }
     var idioma = getCookie('lang');
 
     await accionEDITAjaxPromesa()
@@ -305,6 +314,7 @@ function crearformDELETEaccion(
     setLang();
 
     $("#id_caja_formulario_accion").attr('style', 'display: block');
+    openModal()
 }
 
 //Función ajax con promesas
@@ -323,6 +333,7 @@ function accionDELETEAjaxPromesa(){
                 reject(res);
             }
             else{
+                closeModal();
                 resolve(res);
             }
         })
@@ -386,6 +397,9 @@ function crearformSHOWCURRENTaccion(
     accionsubmit = document.createElement("button");
     accionsubmit.type = 'submit';
     accionsubmit.id = 'id_accionsubmit';
+    accionsubmit.addEventListener("click", function (){
+        closeModal()
+    })
     $("#id_form_accion").append(accionsubmit);
 
     // se coloca una imagen para button anterior en el formulario
@@ -400,6 +414,7 @@ function crearformSHOWCURRENTaccion(
     setLang();
 
     $("#id_caja_formulario_accion").attr('style', 'display: block');
+    openModal()
 
 
 }
@@ -479,6 +494,7 @@ function crearformSEARCHaccion(){
 
     // se pone visible el formulario
     $("#id_caja_formulario_accion").attr('style', 'display: block');
+    openModal()
 }
 
 //Función ajax con promesas
@@ -497,6 +513,7 @@ function accionSEARCHAjaxPromesa(){
                 reject(res);
             }
             else{
+                closeModal();
                 resolve(res);
             }
         })

@@ -6,8 +6,7 @@ function comprobar_form_persona() {
         comprobar_direccion() &&
         comprobar_telefono() &&
         comprobar_email() &&
-        comprobar_foto() &&
-        comprobar_usuario());
+        comprobar_foto());
 
 }// devolverpersonas()
 // funcion creada para devolver un array como el que recogeriamos de back al solicitar el contenido de la entidad persona
@@ -56,6 +55,7 @@ function devolverpersonasAjaxPromesa() {
             if (res.ok != true) {
                 reject(res);
             } else {
+                closeModal()
                 resolve(res);
             }
         })
@@ -81,6 +81,7 @@ async function devolverpersonasajax() {
         });
 
     document.getElementById('form_generico').remove();
+
 }
 
 function getListPersonas(listapersonas) {
@@ -126,6 +127,7 @@ function personaADDAjaxPromesa() {
             if (res.ok != true) {
                 reject(res);
             } else {
+                closeModal()
                 resolve(res);
             }
         })
@@ -200,7 +202,7 @@ function crearformADDpersona() {
 
     // se muestra el formulario
     document.getElementById('id_caja_formulario_persona').style.display = 'block';
-
+    openModal()
 }
 
 ///////EDIT////////////////
@@ -260,6 +262,7 @@ function crearformEDITpersona(
 
     // se muestra el formulario
     $("#id_caja_formulario_persona").attr('style', 'display: block');
+    openModal()
 }
 
 
@@ -278,6 +281,8 @@ function personaEDITAjaxPromesa() {
             if (res.ok != true) {
                 reject(res);
             } else {
+                closeModal()
+
                 resolve(res);
             }
         })
@@ -373,6 +378,7 @@ function crearformDELETEpersona(
     setLang();
 
     $("#id_caja_formulario_persona").attr('style', 'display: block');
+    openModal()
 }
 
 //Función ajax con promesas
@@ -390,6 +396,7 @@ function personaDELETEAjaxPromesa() {
             if (res.ok != true) {
                 reject(res);
             } else {
+                closeModal()
                 resolve(res);
             }
         })
@@ -407,6 +414,7 @@ async function DELETEpersonaajax() {
             .then((res) => {
 
                 if (res.code == 'SQL_OK') {
+                    closeModal()
                     res.code = 'delete_persona_OK';
                 }
                 mensajeactionOK(res.code);
@@ -471,6 +479,9 @@ function crearformSHOWCURRENTpersona(
     accionsubmit = document.createElement("button");
     accionsubmit.type = 'submit';
     accionsubmit.id = 'id_accionsubmit';
+    accionsubmit.addEventListener("click", function (){
+        closeModal()
+    })
     $("#id_form_persona").append(accionsubmit);
 
     // se coloca una imagen para button anterior en el formulario
@@ -486,7 +497,7 @@ function crearformSHOWCURRENTpersona(
 
     $("#id_caja_formulario_persona").attr('style', 'display: block');
 
-
+    openModal()
 }
 
 
@@ -526,18 +537,20 @@ function resetearformpersona() {
     $("#foto_persona").val('');
     $("#foto_persona").on('blur', false);
 
+
     // eliminar el boton de submit de formulario
     $("#id_boton_buscar_persona").remove();
 
     // eliminar el button para submit el formulario de search
     $("#id_accionsubmit").remove();
 
+
     $("#controlador").remove();
     $("#action").remove();
 
     // se pone invisible el formulario
     $("#id_caja_formulario_persona").attr('style', 'display: none');
-
+    closeModal()
     setLang();
 
 }
@@ -581,6 +594,7 @@ function crearformSEARCHpersona() {
 
     // se pone visible el formulario
     $("#id_caja_formulario_persona").attr('style', 'display: block');
+    openModal()
 }
 
 //Función ajax con promesas
@@ -598,6 +612,7 @@ function personaSEARCHAjaxPromesa() {
             if (res.ok != true) {
                 reject(res);
             } else {
+                closeModal()
                 resolve(res);
             }
         })

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/left_navbar.css">
     <link rel="stylesheet" href="./css/snackbar.css">
     <link rel="stylesheet" href="./css/modal.css">
+    <link rel="stylesheet" href="css/detailmodal.css">
     <script type="text/javascript" src="./js/persona.js"></script>
     <script type="text/javascript" src="./locale/idioma.js"></script>
     <script type="text/javascript" src="./locale/Lang_ES.js"></script>
@@ -63,104 +64,135 @@
     </table>
 </div>
 
-<div id="id_caja_formulario_persona" style="display: none;">
-    <form id="id_form_persona" name="form_persona" method="post">
-        <div id="id_box">
-            <label for="id_dni">DNI</label>
-            <input class="text_formato_dni" type="text" id="id_dni" name="dni" placeholder="8 letras y un número"
-                   title="8 letras y un número" onblur="comprobar_dni()"></input>
-            <br/>
-            <small style="color: red" class="dni_format">8 números y una letra </small>
+
+<details>
+    <summary>
+
+
+        <div class="details-modal-overlay"></div>
+    </summary>
+    <div class="details-modal">
+        <div class="details-modal-close">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M13.7071 1.70711C14.0976 1.31658 14.0976 0.683417 13.7071 0.292893C13.3166 -0.0976311 12.6834 -0.0976311 12.2929 0.292893L7 5.58579L1.70711 0.292893C1.31658 -0.0976311 0.683417 -0.0976311 0.292893 0.292893C-0.0976311 0.683417 -0.0976311 1.31658 0.292893 1.70711L5.58579 7L0.292893 12.2929C-0.0976311 12.6834 -0.0976311 13.3166 0.292893 13.7071C0.683417 14.0976 1.31658 14.0976 1.70711 13.7071L7 8.41421L12.2929 13.7071C12.6834 14.0976 13.3166 14.0976 13.7071 13.7071C14.0976 13.3166 14.0976 12.6834 13.7071 12.2929L8.41421 7L13.7071 1.70711Z"
+                      fill="black"/>
+            </svg>
         </div>
-        <label class="nombre_persona">Nombre</label>
-        <input class="text_formato_nombre_persona"
-               onblur="comprobar_nombre()"
-               type="text" id="nombre_persona"
-               name="nombre_persona"
-               placeholder="letras sin acentos y números"
-        >
+        <div class="details-modal-title">
+            <h1>Acción</h1>
+        </div>
+        <div class="details-modal-content">
+            <div id="id_caja_formulario_persona" style="display: none;">
+                <form id="id_form_persona" name="form_persona" method="post">
+                    <div id="id_box">
+                        <label for="id_dni">DNI</label>
+                        <input class="text_formato_dni" type="text" id="id_dni" name="dni"
+                               placeholder="8 letras y un número"
+                               title="8 letras y un número" onblur="comprobar_dni()"></input>
+                        <br/>
+                        <small style="color: red" class="dni_format">8 números y una letra </small>
+                    </div>
+                    <label class="nombre_persona">Nombre</label>
+                    <input class="text_formato_nombre_persona"
+                           onblur="comprobar_nombre()"
+                           type="text" id="nombre_persona"
+                           name="nombre_persona"
+                           placeholder="letras sin acentos y números"
+                    >
 
 
-        </input>
-        <br><small style="color: red" class="nombre_format">Alfabético con acentos, guión y espacios de máximo 45 y mínimo 3 caracteres</small>
-        <br>
-        <label class="apellidos_persona">Apellidos</label>
-        <input class="text_formato_apellidos_persona"
-               onblur="comprobar_apellido()"
-               type="text" id="apellidos_persona"
-               name="apellidos_persona"
+                    </input>
+                    <br><small style="color: red" class="nombre_format">Alfabético con acentos, guión y espacios de
+                    máximo 45 y mínimo 3 caracteres</small>
+                    <br>
+                    <label class="apellidos_persona">Apellidos</label>
+                    <input class="text_formato_apellidos_persona"
+                           onblur="comprobar_apellido()"
+                           type="text" id="apellidos_persona"
+                           name="apellidos_persona"
 
-        ></input>
-        <br> <small style="color: red" class="apellidos_format">Alfabético con acentos, guión y espacios de máximo 100 y mínimo 5 caracteres</small>
-
-
-        <br>
-        <label class="fechaNacimiento_persona">Fecha de naciomiento</label>
-        <input class="text_formato_fechaNacimiento_persona"
-               onblur="comprobar_fechaNacimiento()"
-               type="date" id="fechaNacimiento_persona"
-               name="fechaNacimiento_persona"
-
-        >
-
-        </input>
-        <br><small style="color: red" class="fechaNacimiento_format">Fecha válida de 2 números para día, dos números para mes y cuatro números para año, / como caracter de separación</small>
-
-        <br>
-        <label class="direccion_persona">Dirección</label>
-        <input class="text_formato_direccion_persona"
-               onblur="comprobar_direccion()"
-               type="text" id="direccion_persona"
-               name="direccion_persona"
-
-        >
+                    ></input>
+                    <br> <small style="color: red" class="apellidos_format">Alfabético con acentos, guión y espacios de
+                    máximo 100 y mínimo 5 caracteres</small>
 
 
-        </input>
-        <br>
-        <small style="color: red" class="direccion_format">Alfabético con acentos, números, espacios, ‘/’,’-’,’,’,’º’,‘ª’, máximo 200 y mínimo 10 caracteres</small>
+                    <br>
+                    <label class="fechaNacimiento_persona">Fecha de naciomiento</label>
+                    <input class="text_formato_fechaNacimiento_persona"
+                           onblur="comprobar_fechaNacimiento()"
+                           type="date" id="fechaNacimiento_persona"
+                           name="fechaNacimiento_persona"
 
-        <br>
-        <label class="telefono_persona">Teléfono</label>
-        <input class="text_formato_telefono_persona"
-               onblur="comprobar_telefono()"
-               type="text" id="telefono_persona"
-               name="telefono_persona"
+                    >
 
-        >
+                    </input>
+                    <br><small style="color: red" class="fechaNacimiento_format">Fecha válida de 2 números para día, dos
+                    números para mes y cuatro números para año, / como caracter de separación</small>
 
-        </input>
-        <br><small style="color: red" class="telefono_format">Número de teléfono válido formato de España de 9 dígitos</small>
+                    <br>
+                    <label class="direccion_persona">Dirección</label>
+                    <input class="text_formato_direccion_persona"
+                           onblur="comprobar_direccion()"
+                           type="text" id="direccion_persona"
+                           name="direccion_persona"
 
-        <br>
-        <label class="email_persona">Email</label>
-        <input class="text_formato_email_persona"
-               onblur="comprobar_email()"
-               type="email" id="email_persona"
-               name="email_persona"
-
-        >
-
-        </input>
-        <br><small style="color: red" class="email_format">Email válido máximo 45 y mínimo 8 caracteres (correo@algo.com)</small>
+                    >
 
 
-        <br>
-        <label class="foto_persona">Foto persona</label>
-        <input class="text_formato_foto_persona"
-               onblur="comprobar_foto()"
-               type="text" id="foto_persona"
-               name="foto_persona"
+                    </input>
+                    <br>
+                    <small style="color: red" class="direccion_format">Alfabético con acentos, números, espacios,
+                        ‘/’,’-’,’,’,’º’,‘ª’, máximo 200 y mínimo 10 caracteres</small>
 
-        >
+                    <br>
+                    <label class="telefono_persona">Teléfono</label>
+                    <input class="text_formato_telefono_persona"
+                           onblur="comprobar_telefono()"
+                           type="text" id="telefono_persona"
+                           name="telefono_persona"
 
-        </input>
-        <br><small style="color: red" class="foto_format">Alfabético sin acentos con extensión jpg o png con máximo 40 y mínimo 6 caracteres
-        </small>
-        <br>
+                    >
 
-    </form>
-</div>
+                    </input>
+                    <br><small style="color: red" class="telefono_format">Número de teléfono válido formato de España de
+                    9 dígitos</small>
+
+                    <br>
+                    <label class="email_persona">Email</label>
+                    <input class="text_formato_email_persona"
+                           onblur="comprobar_email()"
+                           type="email" id="email_persona"
+                           name="email_persona"
+
+                    >
+
+                    </input>
+                    <br><small style="color: red" class="email_format">Email válido máximo 45 y mínimo 8 caracteres
+                    (correo@algo.com)</small>
+
+
+                    <br>
+                    <label class="foto_persona">Foto persona</label>
+                    <input class="text_formato_foto_persona"
+                           onblur="comprobar_foto()"
+                           type="text" id="foto_persona"
+                           name="foto_persona"
+
+                    >
+
+                    </input>
+                    <br><small style="color: red" class="foto_format">Alfabético sin acentos con extensión jpg o png con
+                    máximo 40 y mínimo 6 caracteres
+                </small>
+                    <br>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</details>
+
 
 <a href="./menu.html"><p class="titulo_volver">Volver</p></a>
 <div id="leftSidenav" class="sidenav">
