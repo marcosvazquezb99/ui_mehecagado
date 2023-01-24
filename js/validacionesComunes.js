@@ -431,11 +431,11 @@ function checkRolName(value) {
 
 function checkRolDescription(value) {
     value = value.trim();
-    const expresion_regular = /^[^(\[\]\}\{=><#$)]{20,200}$/;
+    const expresion_regular = /[(\[\]}{=><#$)]/;
 
     if (value.length >= 200 || value.length <= 20) {
         return undefined;
-    } else if (!expresion_regular.test(value)) {
+    } else if (expresion_regular.test(value)) {
         return false
     }
     return true;

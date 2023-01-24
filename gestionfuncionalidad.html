@@ -58,38 +58,60 @@
         </tbody>
     </table>
 </div>
+<details>
+    <summary>
 
-<div id="id_caja_formulario_funcionalidad" style="display: none;">
-    <form id="id_form_funcionalidad" name="form_funcionalidad" method="post">
-        <div id="id_box">
-            <label for="id_funcionalidad">id</label>
-            <input type="text" id="id_funcionalidad" name="id_funcionalidad"
-                   title="">
+
+        <div class="details-modal-overlay"></div>
+    </summary>
+    <div class="details-modal">
+        <div class="details-modal-close">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M13.7071 1.70711C14.0976 1.31658 14.0976 0.683417 13.7071 0.292893C13.3166 -0.0976311 12.6834 -0.0976311 12.2929 0.292893L7 5.58579L1.70711 0.292893C1.31658 -0.0976311 0.683417 -0.0976311 0.292893 0.292893C-0.0976311 0.683417 -0.0976311 1.31658 0.292893 1.70711L5.58579 7L0.292893 12.2929C-0.0976311 12.6834 -0.0976311 13.3166 0.292893 13.7071C0.683417 14.0976 1.31658 14.0976 1.70711 13.7071L7 8.41421L12.2929 13.7071C12.6834 14.0976 13.3166 14.0976 13.7071 13.7071C14.0976 13.3166 14.0976 12.6834 13.7071 12.2929L8.41421 7L13.7071 1.70711Z"
+                      fill="black"/>
+            </svg>
         </div>
-        <label class="nombre">Nombre</label>
-        <input class="text_formato_nombre_funcionalidad"
-               onblur="comprobar_nombre()"
-               type="text" id="nombre_funcionalidad"
-               name="nombre_funcionalidad"
-               maxlength="48"
-               placeholder="letras sin acentos y números"
-        >
+        <div class="details-modal-title">
+            <h1>Acción</h1>
+        </div>
+        <div class="details-modal-content">
+            <div id="id_caja_formulario_funcionalidad" style="display: none;">
+                <form id="id_form_funcionalidad" name="form_funcionalidad" method="post">
+                    <div id="id_box">
+                        <label for="id_funcionalidad">id</label>
+                        <input type="text" id="id_funcionalidad" name="id_funcionalidad"
+                               title="">
+                    </div>
+                    <label class="nombre">Nombre</label>
+                    <input class="text_formato_nombre_funcionalidad"
+                           onblur="comprobar_nombre()"
+                           type="text" id="nombre_funcionalidad"
+                           name="nombre_funcionalidad"
+                           maxlength="48"
+                           placeholder="letras sin acentos y números"
+                    >
 
-        </input>
-        <br><small style="color: red" class="name_format">Alfabético sin acentos max 48 min 6</small>
-        <br>
-        <label class="descrip">Descripción</label>
-        <input class="text_formato_descrip_funcionalidad"
-               onblur="comprobar_descripcion()"
-               type="text" id="descrip_funcionalidad"
-               name="descrip_funcionalidad"
-               maxlength="200"
-        >
-        </input>
-        <br><small style="color: red" class="descripcion_format">Cualquier caracter excepto ‘=<>$#{}[]’ max 200 min 20</small>
-        <br>
-    </form>
-</div>
+                    </input>
+                    <br><small style="color: red" class="name_format">Alfabético sin acentos max 48 min 6</small>
+                    <br>
+                    <label class="descrip">Descripción</label>
+                    <input class="text_formato_descrip_funcionalidad"
+                           onblur="comprobar_descripcion()"
+                           type="text" id="descrip_funcionalidad"
+                           name="descrip_funcionalidad"
+                           maxlength="200"
+                    >
+                    </input>
+                    <br><small style="color: red" class="descripcion_format">Cualquier caracter excepto ‘=<>$#{}[]’ max
+                    200 min
+                    20</small>
+                    <br>
+                </form>
+            </div>
+        </div>
+    </div>
+</details>
 
 <a href="./menu.html"><p class="titulo_volver">Volver</p></a>
 <div id="leftSidenav" class="sidenav">

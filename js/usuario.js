@@ -244,7 +244,7 @@ function crearformADDusuario() {
 
     // se muestra el formulario
     document.getElementById('id_caja_formulario_usuario').style.display = 'block';
-    openModal()
+
 }
 
 
@@ -263,7 +263,7 @@ function usuarioADDAjaxPromesa() {
             if (res.ok != true) {
                 reject(res);
             } else {
-                closeModal();
+                //closeModal();
                 resolve(res);
             }
         })
@@ -281,6 +281,7 @@ async function ADDusuarioajax() {
         .then((res) => {
 
             if (res.code == 'SQL_OK') {
+                closeModal()
                 res.code = 'add_usuario_OK';
             }
             ;
@@ -640,7 +641,7 @@ function devolverusuariosAjaxPromesa() {
             if (res.ok !== true) {
                 reject(res);
             } else {
-                closeModal();
+                //closeModal();
                 resolve(res);
             }
         })

@@ -101,7 +101,9 @@ function accionADDAjaxPromesa() {
 
 
 async function ADDaccionajax() {
-
+if(!comprobar_descripcion() || !comprobar_nombre()){
+    return false
+}
     var idioma = getCookie('lang');
 
     await accionADDAjaxPromesa()
@@ -244,7 +246,9 @@ function accionEDITAjaxPromesa() {
 }
 
 async function EDITaccionajax() {
-
+    if(!comprobar_descripcion() || !comprobar_nombre()){
+        return false;
+    }
     var idioma = getCookie('lang');
 
     await accionEDITAjaxPromesa()

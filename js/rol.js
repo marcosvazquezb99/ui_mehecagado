@@ -107,6 +107,7 @@ async function ADDrolajax() {
             .then((res) => {
 
                 if (res.code === 'SQL_OK') {
+                    closeModal()
                     res.code = 'add_rol_OK';
                 }
 
@@ -150,6 +151,7 @@ function crearformADDrol() {
     accionsubmit = document.createElement("button");
     accionsubmit.type = 'submit';
     accionsubmit.id = 'id_accionsubmit';
+
     $("#id_form_rol").append(accionsubmit);
 
     // se coloca la imagen para el button submit
@@ -251,6 +253,7 @@ async function EDITrolajax() {
             .then((res) => {
 
                 if (res.code == 'SQL_OK') {
+                    closeModal()
                     res.code = 'edit_rol_OK';
                 }
                 ;
@@ -493,6 +496,48 @@ function SEARCHrol() {
     openModal();
 }
 
+
+/////////////////SEARCH/////////////
+function crearformSEARCHrol() {
+
+    // reseteo el formulario
+    resetearformrol();
+
+    // creo la accion para el formulario y el onsubmit
+    $("#id_form_rol").attr('action', 'javascript:SEARCHrolAjax()');
+    //$("#id_form_rol").on('submit', search_rol);
+
+    // pongo el campo de dni editable y le asocio la funcion para el onblur
+    //$("#id_rol").attr('readonly', false);
+    //$("#id_dni").blur(comprobar_dni_search);
+
+    // pongo el campo de rol editable y le asocio la funcion para el onblur
+    /*$("#id_rol").attr('readonly',false)
+    $("#id_rol").blur(comprobar_rol_search);*/
+
+
+    // se crea un elemento button submit en el formulario
+    accionsubmit = document.createElement("button");
+    accionsubmit.type = 'submit';
+    accionsubmit.id = 'id_accionsubmit';
+    $("#id_form_rol").append(accionsubmit);
+
+    // se coloca una imagen para button anterior en el formulario
+    botonsubmit = document.createElement("img");
+    botonsubmit.id = "id_boton_buscar_rol";
+    botonsubmit.className = 'titulo_search';
+    botonsubmit.src = "./images/search4.png";
+    botonsubmit.width = '80';
+    botonsubmit.height = '80';
+    $("#id_accionsubmit").append(botonsubmit);
+
+    setLang();
+
+    // se pone visible el formulario
+    $("#id_caja_formulario_rol").attr('style', 'display: block');
+    openModal();
+}
+
 //Función ajax con promesas
 function rolSEARCHAjaxPromesa() {
 
@@ -508,7 +553,7 @@ function rolSEARCHAjaxPromesa() {
             if (res.ok != true) {
                 reject(res);
             } else {
-                closeModal();
+                closeModal()
                 resolve(res);
             }
         })
@@ -535,6 +580,7 @@ async function SEARCHrolAjax() {
     resetearformrol();
 
 }
+
 
 
 //////////CHECKS/////////////
@@ -635,4 +681,5 @@ async function pintarselectrolesAjax(deshabilitado = false, convacio = false, ro
         });
 
     document.getElementById('form_generico').remove();
+    openModal()
 }
