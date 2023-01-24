@@ -13,9 +13,13 @@
     <script type="text/javascript" src="./js/validacionesComunes.js"></script>
     <script type="text/javascript" src="./Comun/config.js"></script>
     <script type="text/javascript" src="./js/menu.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/menu.css">
 </head>
-<body onload="esta_autenticado();incluircabecera();setLang();comprobar_permisos();ponerinvisibleerror();ponerinvisibleformrecuperarcontrasena();">
-<div id="id_caja_superior">
+<body onload="esta_autenticado();incluircabecera();setLang();comprobar_permisos();ponerinvisibleerror();ponerinvisibleformrecuperarcontrasena();incluircabeceralogin();esta_autenticadoMenu();">
+<header><div id="id_caja_superior"></div></header>
     <table id="id_tabla_idiomas">
         <!--<tbody><tr><td onclick="setLang(&#39;ES&#39;);">ES</td><td onclick="setLang(&#39;EN&#39;);">EN</td><td onclick="setLang(&#39;GA&#39;);">GA</td></tr></tbody>-->
     </table>
@@ -25,13 +29,17 @@
     <div id="id_texterror"></div>
     <img src="./images/cerrar3.jpg" width="50" height="50" onclick="cerrarMensajeKO();">
 </div>
-<h1 class="pagina_menu_wellcome"></h1>
+<div class="wrapper-menu">
+
+    <h1 class="pagina_menu_wellcome"></h1>
 <a href="./gestionpersona.html"><h2 class="pagina_persona_wellcome">Gestión de personas</h2></a>
 <a href="./gestionusuario.html"><h2 class="pagina_usuario_wellcome">Gestión de usuarios</h2></a>
 <a href="./gestionrol.html"><h2 class="pagina_rol_wellcome"></h2></a>
 <a href="./gestionaccion.html"><h2 class="pagina_accion_wellcome"></h2></a>
 <a href="./gestionfuncionalidad.html"><h2 class="pagina_funcionalidad_wellcome"></h2></a>
 <a href="./gestionrolaccionfuncionalidad.html"><h2 class="pagina_rolaccionfuncionalidad_wellcome"></h2></a>
+</div>
+
 
 <div id="naptha_container0932014_0707"></div>
 <div id="id_caja_formulario_recuperar_contrasena">

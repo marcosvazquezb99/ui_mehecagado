@@ -1,0 +1,73 @@
+html{
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    margin: 0;
+    background-color: #efefef;
+}
+header{
+    background-color: #364552;
+    color: white;
+    padding: 1rem 2rem;
+}
+header table{
+    margin: 0;
+    font-size: 1.5rem;
+    
+}
+
+header table td{
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+header table td:hover{
+    color: cornflowerblue;
+    cursor: pointer;
+}
+
+header p{
+    margin-top: 0;
+    float: right;
+    vertical-align: text-top;
+    
+}
+
+header a{
+    margin: 0;
+    float: right;
+    transition: color 0.3s ease;
+    color: white;
+    text-decoration: none;
+}
+
+header a:hover{
+    color: cornflowerblue;
+    cursor: pointer;
+}
+
+.wrapper-menu{
+    display: grid;
+    place-content: center;
+}
+.boton_cambiar_contrasena{
+    color:#fff;
+	background-color:#364552;
+	outline: none;
+    border: 0;
+    color: #fff;
+	padding:10px 20px;
+	text-transform:uppercase;
+	margin-top:50px;
+	border-radius:2px;
+	cursor:pointer;
+    position: relative;
+    top: 50%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+}
+
+#id_caja_formulario_recuperar_contrasena{
+    
+}

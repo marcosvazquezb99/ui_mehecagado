@@ -112,6 +112,18 @@ function closeNav() {
         document.getElementById("leftSidenav").style.width = "0";
 }
 
+function esta_autenticadoMenu(){
+	if ((getCookie('usuarioSistema') === null) || (getCookie('usuarioSistema') === '')) {
+			window.location.href = "login.html";
+	 }
+	 else{
+		 let temp = "<p>"+"Usuario :"+getCookie('usuarioSistema');+"</p>";
+		 temp += "<br><a href='javascript:desconectar();'>Desconectar</a>";
+		 $("#id_caja_superior").append(temp);
+	 }
+	
+}
+
 function esta_autenticado() {
     if ((getCookie('usuarioSistema') === null) || (getCookie('usuarioSistema') === '')) {
         window.location.href = "login.html";
