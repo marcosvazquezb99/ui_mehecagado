@@ -35,7 +35,50 @@ body {
     font-size: 36px;
     margin-left: 50px;
 }
+h1{
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+.table-wrapper {
+    max-width: 100%;
+    width: fit-content;
+    max-height: 700px;
+    overflow: auto;
+    margin: 0 auto;
+  }
+  
+  .table { border-collapse: collapse; margin: 25px 0; font-size: 1em; font-family: sans-serif; min-width: 450px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); }
 
+  .table thead tr { background-color: #980081; color: #ffffff; text-align: middle; }
+  
+  .table th, .styled-table td { padding: 12px 15px; }
+
+  .table tbody tr { 
+    border-bottom: 1px solid #dddddd; 
+    text-align: center;
+  } 
+
+  .table tbody tr:nth-of-type(even) { 
+    background-color: #f3f3f3; } 
+    
+  .table tbody tr:last-of-type { 
+    border-bottom: 2px solid #009879; }
+
+
+  .table th{
+    color: #fff;
+    background-color: #364552;
+    position: sticky;
+    top: 0;
+  }
+
+  .botonesaccion{
+    width: 50%;
+    margin: 0 auto;
+
+  }
+  
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}

@@ -23,6 +23,25 @@ function redirigir() {
         window.location.href = "menu.html";
     }
 }
+function incluircabeceralogin(){
+
+	$("#id_caja_superior").html = "";
+	let incluir = "<table id='id_tabla_idiomas'>"+
+        "<tr>"+
+          "<td onclick=\"setLang(\'ES\');\">ES</td>"+
+          "<td onclick=\"setLang(\'EN\');\">EN</td>"+
+          "<td onclick=\"setLang(\'GA\');\">GA</td>"+
+        "</tr>"+
+      "</table>";
+      
+      if (getCookie('usuarioSistema')===null){
+      	let temp = "Usuario: "+getCookie('usuarioSistema');
+      	incluir += "<p>"+temp+"</p>"+"<br><a href='javascript:desconectar();'>Desconectar</a>";
+      }
+
+    $("#id_caja_superior").append(incluir);
+
+}
 
 function incluircabecera() {
 
@@ -141,6 +160,10 @@ function ponerinvisible(idElemento) {
 
 function ponervisible(idElemento) {
     document.getElementById(idElemento).style.display = 'block';
+}
+
+function ponerinvisibleformrecuperarcontrasena(){
+	document.getElementById('id_caja_formulario_recuperar_contrasena').style.display = 'none';
 }
 
 function mensajeKO(idElemento, codigoerror) {

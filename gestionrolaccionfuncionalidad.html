@@ -41,6 +41,7 @@
             opacity: 0.2;
         }
     </style>
+    <link rel="stylesheet" href="./css/gestionrolaccionfuncionalidad.css">
 </head>
 <body onload="esta_autenticado();incluircabecera();ponerinvisibleerror();devolverrolaccionfuncionalidadajax();setLang(); appendToTbody()">
 <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
@@ -55,11 +56,8 @@
     <img src="./images/cerrar3.jpg" width="50" height="50" onclick="cerrarMensajeKO();">
 </div>
 
-<div style="max-width: 100%;
-    width: fit-content;
-    max-height: 500px;
-    overflow: auto;">
-    <table style="table-layout: fixed" id="id_tablarolaccionfuncionalidad" border="1">
+<div class="table-wrapper">
+    <table class="table" id="id_tablarolaccionfuncionalidad" border="1">
         <thead>
         <tr id="tr_tablarolaccionfuncionalidad">
 
@@ -74,6 +72,8 @@
 </div>
 
 <div id="id_caja_formulario_rolaccionfuncionalidad" style="display: none;">
+
+    page: <span id="page"></span>
     <form id="id_form_rolaccionfuncionalidad" name="form_rolaccionfuncionalidad" method="post">
 
         <label for="id_funcionalidad">id</label>
@@ -101,6 +101,7 @@
 
 <a href="./menu.html"><p class="titulo_volver">Volver</p></a>
 <div id="leftSidenav" class="sidenav">
+
 
 </div>
 

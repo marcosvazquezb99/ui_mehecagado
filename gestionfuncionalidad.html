@@ -19,6 +19,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="./Comun/config.js"></script>
     <script type="text/javascript" src="./js/md5.js"></script>
+    <link rel="stylesheet" href="./css/gestionfuncionalidad.css">
 </head>
 <body onload="esta_autenticado();incluircabecera();ponerinvisibleerror();devolverfuncionalidadajax();setLang();">
 <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
@@ -32,16 +33,17 @@
     <div id="id_texterror"></div>
     <img src="./images/cerrar3.jpg" width="50" height="50" onclick="cerrarMensajeKO();">
 </div>
-<img src="./images/add4.png" height="80" width="80" onclick="crearformADDfuncionalidad();"
-     alt="Insertar"
-     title="Insertar"><span class="titulo_add">Insertar</span></img>
+
+<div class="botonesaccion">
+    <img src="./images/add4.png" height="80" width="80" onclick="crearformADDfuncionalidad();"
+    alt="Insertar"
+    title="Insertar"><span class="titulo_add">Insertar</span></img>
 <img src="./images/search4.png" height="60" width="60" onclick="crearformSEARCHfuncionalidad();"
-     alt="Buscar" title="Buscar"><span class="titulo_search">Buscar</span></img>
-<div style="max-width: 100%;
-    width: fit-content;
-    max-height: 500px;
-    overflow: auto;">
-    <table id="id_tablafuncionalidad" border="1">
+    alt="Buscar" title="Buscar"><span class="titulo_search">Buscar</span></img>
+</div>
+
+<div class="table-wrapper">
+    <table class="table" id="id_tablafuncionalidad" border="1">
         <thead>
         <tr>
             <th>Id</th>

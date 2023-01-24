@@ -12,8 +12,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="./js/validacionesComunes.js"></script>
     <script type="text/javascript" src="./Comun/config.js"></script>
+    <script type="text/javascript" src="./js/menu.js"></script>
 </head>
-<body onload="esta_autenticado();incluircabecera();setLang();comprobar_permisos();ponerinvisibleerror();">
+<body onload="esta_autenticado();incluircabecera();setLang();comprobar_permisos();ponerinvisibleerror();ponerinvisibleformrecuperarcontrasena();">
 <div id="id_caja_superior">
     <table id="id_tabla_idiomas">
         <!--<tbody><tr><td onclick="setLang(&#39;ES&#39;);">ES</td><td onclick="setLang(&#39;EN&#39;);">EN</td><td onclick="setLang(&#39;GA&#39;);">GA</td></tr></tbody>-->
@@ -33,5 +34,17 @@
 <a href="./gestionrolaccionfuncionalidad.html"><h2 class="pagina_rolaccionfuncionalidad_wellcome"></h2></a>
 
 <div id="naptha_container0932014_0707"></div>
+<div id="id_caja_formulario_recuperar_contrasena">
+      
+    <form id="id_form_recuperar_contrasena" name="form_recuperar_contrasena" action='javascript:recuperarContrasena();' onsubmit="return comprobar_form_recuperar();" method="post">
+      
+      <label class="cambiar_contrasena"></label>
+      <input type='password' id='id_contrasena' name='contrasena' onblur='comprobar_contrasena();'></input>
+      <br>
+      <input type='submit' value='Cambiar contraseña' onclick="document.getElementById('id_caja_formulario_recuperar_contrasena').style.display = 'none'">
+    </form>
+  </div>
+  <br>
+  <button class="boton_cambiar_contrasena" id="id_boton_cambiar_contrasena" type="button" onclick="document.getElementById('id_caja_formulario_recuperar_contrasena').style.display = 'block', document.getElementById('id_boton_cambiar_contrasena').style.display = 'none'" ></button>
 </body>
 </html>
