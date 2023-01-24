@@ -16,6 +16,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/snackbar.css">
+    <link rel="stylesheet" href="./css/modal.css">
   </head>
   <body onload="incluircabeceralogin();ponerinvisibleerror();setLang();">
     <header><div id='id_caja_superior'></div></header>
@@ -40,6 +42,31 @@
         <a href='registrar.html'><p class='titulo_registrar'></p></a>
       </div>   
   </div> 
-    
+
+  <div id="snackbar"></div>
+
+  <button onclick="myFunction()">Show Snackbar</button>
+
+  <script>
+  function myFunction() {
+    var x = document.getElementById("snackbar");
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+  }
+  </script>
+
+  <!-- The Modal -->
+  <div id="modal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">x</span>
+        <div id='id_texto_mensaje_accion'></div>
+    </div>
+
+  </div>
+
+
+
   </body>
 </html>

@@ -529,12 +529,12 @@ async function SEARCHfuncionalidadAjax() {
 function comprobar_nombre() {
     const resp = checkRolName(document.getElementById('nombre_funcionalidad').value);
     if (resp) {
-        mensajeOK('nombre_rol');
+        mensajeOK('nombre_funcionalidad');
         return true;
     } else if (resp === undefined) {
-        mensajeKO('nombre_rol', 'tamano_nombre_rol_mal')
+        mensajeKO('nombre_funcionalidad', 'tamano_nombre_funcionalidad_mal')
     } else {
-        mensajeKO('nombre_rol', 'formato_nombre_rol_mal')
+        mensajeKO('nombre_funcionalidad', 'formato_nombre_funcionalidad_mal')
     }
     return false;
 }
@@ -542,12 +542,12 @@ function comprobar_nombre() {
 function comprobar_descripcion() {
     const resp = checkRolDescription(document.getElementById('descrip_funcionalidad').value);
     if (resp) {
-        mensajeOK('descrip_rol');
+        mensajeOK('descrip_funcionalidad');
         return true;
     } else if (resp === undefined) {
-        mensajeKO('descrip_rol', 'tamano_descrip_rol_mal')
+        mensajeKO('descrip_funcionalidad', 'tamano_descrip_funcionalidad_mal')
     } else {
-        mensajeKO('descrip_rol', 'formato_descrip_rol_mal')
+        mensajeKO('descrip_funcionalidad', 'formato_descrip_funcionalidad_mal')
     }
     return false;
 }
