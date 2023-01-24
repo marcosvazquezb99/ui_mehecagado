@@ -7,7 +7,7 @@ html {
 body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #e5b7e5;
+    background-color: white;
     font-size: 70%;
     line-height: 1.4;
     font-family: "Inter", sans-serif;
@@ -39,7 +39,7 @@ body {
     background-color: #17ac4e;
 }
 .details-modal {
-    background: #e5b7e5;
+    background: white;
     border-radius: 0.5em;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     left: 50%;
