@@ -156,7 +156,8 @@ arrayGA={
 	'formato_nombre_rol_mal': 'Para o nome só está permitido letras e números sen acentos',
 	'tamano_descrip_rol_mal': 'A descrición debe ter entre 20 e 200 caracters',
 	'formato_descrip_rol_mal': 'A descrición soporta calquera caracter a excepción de =<>$#{}[]',
-
+	'tamano_nombre_funcionalidad_mal': 'O tamaño do nome ten que ser entre 6 y 48 caracteres',
+	'formato_descrip_funcionalidad_mal': 'O formato só pode ter letras sen acentos',
 
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////

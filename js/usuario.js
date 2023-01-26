@@ -52,7 +52,16 @@ function comprobar_usuario_search() {
 // comprobar_dni()
 // funcion de validación de formato de dni en acciones que no sean search
 function comprobar_dni() {
-    return true;
+    const resp = check_dni(document.getElementById('id_dni').value);
+    if(resp){
+        mensajeOK('id_dni');
+        return true;
+    }else if(resp === undefined){
+        mensajeKO('id_dni', 'letra_dni_no_corresponde')
+    }else{
+        mensajeKO('id_dni', 'formato_dni_no_valido')
+    }
+    return false;
 }
 
 // comprobar_dni_search()

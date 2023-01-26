@@ -76,8 +76,7 @@
                         <label for="id_accion">id</label>
                         <input class="text_formato_dni" type="text" id="id_accion" name="id_accion"
                                placeholder="4 dígitos"
-                               title=""
-                               onblur="comprobar_dni()"></input>
+                               title=""></input>
                         <div id="text_error_dni"></div>
                     </div>
                     <label class="nombre">Nombre</label>
@@ -90,7 +89,7 @@
                     >
 
                     </input>
-                    <small id="nombre_accion_error"></small>
+                    <small id="nombre_accion_error" class="error_message"></small>
                     <br><small style="color: red" class="name_format">Alfabético sin acentos max 48 min 6</small>
                     <br>
                     <label class="descrip">Descripción</label>
@@ -101,7 +100,7 @@
                            maxlength="200"
                     >
                     </input>
-                    <div id="descrip_accion_error"></div>
+                    <small id="descrip_accion_error" class="error_message"></small>
                     <br><small style="color: red" class="descripcion_format">Cualquier caracter excepto ‘=<>$#{}[]’ max
                     200 min
                     20</small>

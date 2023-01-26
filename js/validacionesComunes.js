@@ -10,9 +10,9 @@ function deleteAllCookies() {
 }
 
 function desconectar() {
-   deleteAllCookies();
-   // console.log('comeme un pie')
-     window.location.href = "login.html";
+    deleteAllCookies();
+    // console.log('comeme un pie')
+    window.location.href = "login.html";
 }
 
 function redirigir() {
@@ -23,21 +23,22 @@ function redirigir() {
         window.location.href = "menu.html";
     }
 }
-function incluircabeceralogin(){
 
-	$("#id_caja_superior").html = "";
-	let incluir = "<table id='id_tabla_idiomas'>"+
-        "<tr>"+
-          "<td onclick=\"setLang(\'ES\');\">ES</td>"+
-          "<td onclick=\"setLang(\'EN\');\">EN</td>"+
-          "<td onclick=\"setLang(\'GA\');\">GA</td>"+
-        "</tr>"+
-      "</table>";
-      
-      if (getCookie('usuarioSistema')===null){
-      	let temp = "Usuario: "+getCookie('usuarioSistema');
-      	incluir += "<p>"+temp+"</p>"+"<br><a href='javascript:desconectar();'>Desconectar</a>";
-      }
+function incluircabeceralogin() {
+
+    $("#id_caja_superior").html = "";
+    let incluir = "<table id='id_tabla_idiomas'>" +
+        "<tr>" +
+        "<td onclick=\"setLang(\'ES\');\">ES</td>" +
+        "<td onclick=\"setLang(\'EN\');\">EN</td>" +
+        "<td onclick=\"setLang(\'GA\');\">GA</td>" +
+        "</tr>" +
+        "</table>";
+
+    if (getCookie('usuarioSistema') === null) {
+        let temp = "Usuario: " + getCookie('usuarioSistema');
+        incluir += "<p>" + temp + "</p>" + "<br><a href='javascript:desconectar();'>Desconectar</a>";
+    }
 
     $("#id_caja_superior").append(incluir);
 
@@ -69,9 +70,7 @@ function incluircabecera() {
         "</table>";
 
 
-
     $("#leftSidenav").append(sidenav);
-
 
 
     /*let incluir = "<table style='color: white' id='id_tabla_idiomas'>" +
@@ -104,24 +103,25 @@ function incluircabecera() {
     }
 
 }
+
 function openNav() {
     document.getElementById("leftSidenav").style.width = "250px";
 }
 
 function closeNav() {
-        document.getElementById("leftSidenav").style.width = "0";
+    document.getElementById("leftSidenav").style.width = "0";
 }
 
-function esta_autenticadoMenu(){
-	if ((getCookie('usuarioSistema') === null) || (getCookie('usuarioSistema') === '')) {
-			window.location.href = "login.html";
-	 }
-	 else{
-		 let temp = "<p>"+"Usuario :"+getCookie('usuarioSistema');+"</p>";
-		 temp += "<br><a href='javascript:desconectar();'>Desconectar</a>";
-		 $("#id_caja_superior").append(temp);
-	 }
-	
+function esta_autenticadoMenu() {
+    if ((getCookie('usuarioSistema') === null) || (getCookie('usuarioSistema') === '')) {
+        window.location.href = "login.html";
+    } else {
+        let temp = "<p>" + "Usuario :" + getCookie('usuarioSistema');
+        +"</p>";
+        temp += "<br><a href='javascript:desconectar();'>Desconectar</a>";
+        $("#id_caja_superior").append(temp);
+    }
+
 }
 
 function esta_autenticado() {
@@ -130,8 +130,8 @@ function esta_autenticado() {
 
     } else {
 
-        let temp = "<span class='user' style='color: white'>Usuario: </span>  <span style='color: white'>" + getCookie('usuarioSistema') +'</span>';
-         temp += "<br><a href='javascript:desconectar();' style='color: white'>Desconectar</a>";
+        let temp = "<span class='user' style='color: white'>Usuario: </span>  <span style='color: white'>" + getCookie('usuarioSistema') + '</span>';
+        temp += "<br><a href='javascript:desconectar();' style='color: white'>Desconectar</a>";
         $("#leftSidenav").append(temp);
 
     }
@@ -174,20 +174,23 @@ function ponervisible(idElemento) {
     document.getElementById(idElemento).style.display = 'block';
 }
 
-function ponerinvisibleformrecuperarcontrasena(){
-	document.getElementById('id_caja_formulario_recuperar_contrasena').style.display = 'none';
+function ponerinvisibleformrecuperarcontrasena() {
+    document.getElementById('id_caja_formulario_recuperar_contrasena').style.display = 'none';
 }
 
 function mensajeKO(idElemento, codigoerror) {
+    let content = document.getElementById('id_accionsubmit');
+    if (content && content.firstChild.getAttribute('src').includes('search')) {
+        return false
+    }
     idSplit = idElemento.split('_');
     idSplit.push('error');
-    idElementoError = idSplit.toString().replaceAll(',','_');
-    document.getElementById(idElementoError)
-        .classList.forEach((value) => {
+    idElementoError = idSplit.toString().replaceAll(',', '_');
+    document.getElementById(idElementoError).classList.forEach((value) => {
         document.getElementById(idElementoError).classList.remove(value)
     })
-    console.log(idElemento, idElementoError);
     document.getElementById(idElementoError).classList.add(codigoerror);
+    document.getElementById(idElementoError).classList.add('error_message');
     document.getElementById(idElementoError).style.display = 'contents';
     document.getElementById(idElemento).style.borderColor = "#ff0000";
     setLang();
@@ -223,7 +226,7 @@ function mensajeOK(idElemento) {
 
     idSplit = idElemento.split('_');
     idSplit.push('error');
-    idElementoError = idSplit.toString().replaceAll(',','_');
+    idElementoError = idSplit.toString().replaceAll(',', '_');
 
     document.getElementById(idElementoError).style.display = 'none';
     document.getElementById(idElemento).style.borderColor = "#00e600";
@@ -236,10 +239,12 @@ function mensajeactionOK(codigo) {
         document.getElementById('snackbar').classList.remove(value)
     })
     //document.getElementById('id_texterror').innerHTML = codigo;
-    
+
     var x = document.getElementById("snackbar");
     x.className = "show";
-    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    setTimeout(function () {
+        x.className = x.className.replace("show", "");
+    }, 3000);
     document.getElementById('snackbar').classList.add(codigo);
     document.getElementById('snackbar').style.borderColor = "#00e600";
     document.getElementById('snackbar').style.display = 'block';
@@ -256,17 +261,17 @@ function mensajeFAIL(codigoerror) {
 
 }
 
-function mensajeModal(codigo){
+function mensajeModal(codigo) {
     var modal = document.getElementById("modal");
     var span = document.getElementsByClassName("close")[0];
     document.getElementById("id_texto_mensaje_accion").classList.add(codigo);
     modal.style.display = "block";
-    span.onclick = function() {
+    span.onclick = function () {
         modal.style.display = "none";
     }
-    window.onclick = function(event) {
+    window.onclick = function (event) {
         if (event.target == modal) {
-          modal.style.display = "none";
+            modal.style.display = "none";
         }
     }
 }
@@ -499,6 +504,17 @@ function checkRolDescription(value) {
     }
     return true;
 }
+function checkFuncionalityDescription(value) {
+    value = value.trim();
+    const expresion_regular = /[(\[\]}{=><#$)óáéíú]/;
+
+    if (value.length >= 200 || value.length <= 20) {
+        return undefined;
+    } else if (expresion_regular.test(value)) {
+        return false
+    }
+    return true;
+}
 
 
 function closeModal() {
@@ -508,15 +524,19 @@ function closeModal() {
 
 }
 
-function hideErrors(){
-    document.querySelectorAll('small[class^="formato_error"]').forEach(function(el) {
+function hideErrors() {
+    document.querySelectorAll('small[id$="_error"]').forEach(function (el) {
         el.style.display = 'none';
-     });
+
+    });
+    document.querySelectorAll('input').forEach(function (el) {
+        el.style.borderColor = "#000000";
+    });
 }
 
 function openModal() {
     document.getElementsByTagName('details')[0].setAttribute('open', '');
-
+    hideErrors()
 
 }
 

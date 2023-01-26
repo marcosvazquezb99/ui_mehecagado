@@ -101,11 +101,19 @@
 
                     <label for="id_dni">DNI</label>
                     <input class="text_formato_dni" type="text" id="id_dni" name="dni" placeholder="8 letras y un número" maxlength="9"
-                           title="8 letras y un número"><span class="text_formato_dni">8 letras y un número</span>
+                           title="8 letras y un número"> <small id="id_dni_error"></small>
+                    <br/>
+                    <span class="text_formato_dni">8 letras y un número</span>
+
+
                     <br>
                     <label class="usuario">Login Usuario</label>
                     <input class="text_formato_usuario" type="text" id="id_usuario" name="usuario"
-                           placeholder="letras sin acentos y números" title="letras sin acentos y números"><span class="text_formato_usuario">letras sin acentos y
+                           placeholder="letras sin acentos y números" title="letras sin acentos y números">
+                    <small id="id_usuario_error"></small>
+
+                    <br/>
+                    <span class="text_formato_usuario">letras sin acentos y
         números</span>
                     <br>
                     <div id="caja_select_rol"><label class="id_rol">Rol Usuario</label></div>

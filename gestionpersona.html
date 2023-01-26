@@ -90,6 +90,7 @@
                         <input class="text_formato_dni" type="text" id="id_dni" name="dni"
                                placeholder="8 letras y un número"
                                title="8 letras y un número" onblur="comprobar_dni()"></input>
+                        <small id="id_dni_error"></small>
                         <br/>
                         <small style="color: red" class="dni_format">8 números y una letra </small>
                     </div>
@@ -102,7 +103,7 @@
                     >
 
 
-                    </input>
+                    </input><small id="nombre_persona_error"></small>
                     <br><small style="color: red" class="nombre_format">Alfabético con acentos, guión y espacios de
                     máximo 45 y mínimo 3 caracteres</small>
                     <br>
@@ -112,7 +113,7 @@
                            type="text" id="apellidos_persona"
                            name="apellidos_persona"
 
-                    ></input>
+                    ></input><small id="apellidos_persona_error"></small>
                     <br> <small style="color: red" class="apellidos_format">Alfabético con acentos, guión y espacios de
                     máximo 100 y mínimo 5 caracteres</small>
 
@@ -127,6 +128,8 @@
                     >
 
                     </input>
+                    <small id="fechaNacimiento_persona_error"></small>
+
                     <br><small style="color: red" class="fechaNacimiento_format">Fecha válida de 2 números para día, dos
                     números para mes y cuatro números para año, / como caracter de separación</small>
 
@@ -141,6 +144,7 @@
 
 
                     </input>
+                    <small id="direccion_persona_error"></small>
                     <br>
                     <small style="color: red" class="direccion_format">Alfabético con acentos, números, espacios,
                         ‘/’,’-’,’,’,’º’,‘ª’, máximo 200 y mínimo 10 caracteres</small>
@@ -155,6 +159,7 @@
                     >
 
                     </input>
+                    <small id="telefono_persona_error"></small>
                     <br><small style="color: red" class="telefono_format">Número de teléfono válido formato de España de
                     9 dígitos</small>
 
@@ -168,6 +173,7 @@
                     >
 
                     </input>
+                    <small id="email_persona_error"></small>
                     <br><small style="color: red" class="email_format">Email válido máximo 45 y mínimo 8 caracteres
                     (correo@algo.com)</small>
 
@@ -182,6 +188,7 @@
                     >
 
                     </input>
+                    <small id="foto_persona_error"></small>
                     <br><small style="color: red" class="foto_format">Alfabético sin acentos con extensión jpg o png con
                     máximo 40 y mínimo 6 caracteres
                 </small>

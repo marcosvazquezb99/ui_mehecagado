@@ -103,6 +103,11 @@ details[open] .details-modal-overlay {
     opacity: 0.5;
 }
 
+.error_message{
+    display: contents;
+    color: red;
+}
+
 details[open] .buscar-button{
     pointer-events: all;
     opacity: 0.5;

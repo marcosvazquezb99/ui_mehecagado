@@ -546,7 +546,7 @@ function comprobar_nombre() {
 }
 
 function comprobar_descripcion() {
-    const resp = checkRolDescription(document.getElementById('descrip_funcionalidad').value);
+    const resp = checkFuncionalityDescription(document.getElementById('descrip_funcionalidad').value);
     if (resp) {
         mensajeOK('descrip_funcionalidad');
         return true;

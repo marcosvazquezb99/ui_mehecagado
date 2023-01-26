@@ -156,7 +156,8 @@ arrayEN = {
     'formato_nombre_rol_mal': 'Name only supports letters and numbers without accents',
     'tamano_descrip_rol_mal': 'The description length must be between 20 and 200 characters',
     'formato_descrip_rol_mal': 'The description supports any character except =<>$#{}[]',
-
+    'tamano_nombre_funcionalidad_mal': 'The name size has to be between 6 and 48 characters',
+    'formato_descrip_funcionalidad_mal': 'The format only allows letter without accents',
 
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
