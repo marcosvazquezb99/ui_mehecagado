@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="./css/menu.css">
 </head>
 <body onload="esta_autenticado();incluircabecera();setLang();comprobar_permisos();ponerinvisibleerror();ponerinvisibleformrecuperarcontrasena();incluircabeceralogin();esta_autenticadoMenu();">
-<header><header><div id="id_caja_superior" class="caja_superior"></div></header></div></header>
+<header><div id="id_caja_superior" class="caja_superior"></div></header>
     <table id="id_tabla_idiomas">
         <!--<tbody><tr><td onclick="setLang(&#39;ES&#39;);">ES</td><td onclick="setLang(&#39;EN&#39;);">EN</td><td onclick="setLang(&#39;GA&#39;);">GA</td></tr></tbody>-->
     </table>
@@ -31,32 +31,34 @@
 </div>
 <div class="wrapper-menu">
 
-    <div class="wrapper-menu">
+
 
     <h1 class="pagina_menu_wellcome"></h1>
-<a href="./gestionpersona.html"><h2 class="pagina_persona_wellcome">Gestión de personas</h2></a>
-<a href="./gestionusuario.html"><h2 class="pagina_usuario_wellcome">Gestión de usuarios</h2></a>
-<a href="./gestionrol.html"><h2 class="pagina_rol_wellcome"></h2></a>
-<a href="./gestionaccion.html"><h2 class="pagina_accion_wellcome"></h2></a>
-<a href="./gestionfuncionalidad.html"><h2 class="pagina_funcionalidad_wellcome"></h2></a>
-<a href="./gestionrolaccionfuncionalidad.html"><h2 class="pagina_rolaccionfuncionalidad_wellcome"></h2></a>
+    <a href="./gestionpersona.html"><h2 class="pagina_persona_wellcome">Gestión de personas</h2></a>
+    <a href="./gestionusuario.html"><h2 class="pagina_usuario_wellcome">Gestión de usuarios</h2></a>
+    <a href="./gestionrol.html"><h2 class="pagina_rol_wellcome"></h2></a>
+    <a href="./gestionaccion.html"><h2 class="pagina_accion_wellcome"></h2></a>
+    <a href="./gestionfuncionalidad.html"><h2 class="pagina_funcionalidad_wellcome"></h2></a>
+    <a href="./gestionrolaccionfuncionalidad.html"><h2 class="pagina_rolaccionfuncionalidad_wellcome"></h2></a>
+
+
+
+
+
+    <div id="naptha_container0932014_0707"></div>
+    <div id="id_caja_formulario_recuperar_contrasena">
+
+        <form id="id_form_recuperar_contrasena" name="form_recuperar_contrasena" action='javascript:recuperarContrasena();' onsubmit="return comprobar_form_recuperar();" method="post">
+
+        <label class="cambiar_contrasena"></label>
+        <input type='password' id='id_contrasena' name='contrasena' onblur='comprobar_contrasena();'></input>
+        <br>
+        <input type='submit' value='Cambiar contraseña' onclick="document.getElementById('id_caja_formulario_recuperar_contrasena').style.display = 'none'">
+        </form>
+    </div>
+    <br>
+    <button class="boton_cambiar_contrasena" id="id_boton_cambiar_contrasena" type="button" onclick="document.getElementById('id_caja_formulario_recuperar_contrasena').style.display = 'block', document.getElementById('id_boton_cambiar_contrasena').style.display = 'none'" ></button>
 </div>
-
-</div>
-
-
-<div id="naptha_container0932014_0707"></div>
-<div id="id_caja_formulario_recuperar_contrasena">
-      
-    <form id="id_form_recuperar_contrasena" name="form_recuperar_contrasena" action='javascript:recuperarContrasena();' onsubmit="return comprobar_form_recuperar();" method="post">
-      
-      <label class="cambiar_contrasena"></label>
-      <input type='password' id='id_contrasena' name='contrasena' onblur='comprobar_contrasena();'></input>
-      <br>
-      <input type='submit' value='Cambiar contraseña' onclick="document.getElementById('id_caja_formulario_recuperar_contrasena').style.display = 'none'">
-    </form>
-  </div>
-  <br>
-  <button class="boton_cambiar_contrasena" id="id_boton_cambiar_contrasena" type="button" onclick="document.getElementById('id_caja_formulario_recuperar_contrasena').style.display = 'block', document.getElementById('id_boton_cambiar_contrasena').style.display = 'none'" ></button>
 </body>
+
 </html>

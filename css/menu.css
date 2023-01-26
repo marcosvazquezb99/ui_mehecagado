@@ -3,29 +3,32 @@ html{
     -webkit-text-fill-color: rgb(219, 219, 219);
 }
 
-body{
-    margin: 0;
-    background-color: #efefef;
-}
-header{
-    -webkit-text-fill-color: rgb(219, 219, 219);
-}
+
+
 
 body{
-    display: flex;
-    height: 100vh;
-    justify-content: left;
-    align-items: center;
-    text-align: center;
-    background: #1A1E23;
+
+    background: #fff;
 }
-header{
+.caja_superior{
+    background-color: #364552;
     color: white;
     padding: 1rem 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 95%;
+
 }
 header table{
-    margin: 0;
-    font-size: 1.5rem;
+    display: flex;
+    margin-right: 16px;
+    align-self: stretch;
+    align-items: center;
+    flex-wrap: nowrap;
 }
 
 header table td{
@@ -72,21 +75,10 @@ header a:hover{
     cursor: pointer;
 }
 
-.caja_superior{
-    background-color: transparent;
-    color: white;
-    padding: 1rem 2rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    width: 92%;
-    
-}
+
 
 .wrapper-menu{
+    margin-top: 100px;
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -99,15 +91,17 @@ header a:hover{
 li{
     padding: 6px 0;
 }
-
+h1{
+    -webkit-text-fill-color: rgb(0, 0, 0);
+}
 a{
-    -webkit-text-fill-color: rgb(219, 219, 219);
+    -webkit-text-fill-color: rgb(0, 0, 0);
     border-radius: 15px;
     background-color: transparent;
     position: relative;
     display: block;
     padding: 4px 0;
-    font: 25px Raleway, sans-serif;
+    font: 20px Raleway, sans-serif;
     text-decoration: none;
     text-transform: uppercase;
     color: transparent;
@@ -118,7 +112,7 @@ a{
 a:hover{
     border-radius: 15px;
     background-size: 100%;
-    font-size: 30px;
+    font-size: 25px;
     transition: 0.2s linear;
 }
 
@@ -138,8 +132,4 @@ a:hover{
     top: 50%;
     left: 45%;
     transform: translate(-50%, -50%);
-}
-
-#id_caja_formulario_recuperar_contrasena{
-    
 }
