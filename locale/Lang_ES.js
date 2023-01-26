@@ -156,6 +156,7 @@ arrayES = {
     'formato_nombre_rol_mal': 'Para el nombre solo está permitido letras y números sin acentos',
     'tamano_descrip_rol_mal': 'La descripción debe tener entre 20 y200 caracteres',
     'formato_descrip_rol_mal': 'La descripción soporta cualquier caracter excepto =<>$#{}[]',
+    'tamano_nombre_funcionalidad_mal': 'El tamaño del nombre tiene que se de entre 6 y 48 caracteres',
 
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////

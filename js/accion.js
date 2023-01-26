@@ -168,7 +168,7 @@ function crearformADDaccion() {
 
     // se muestra el formulario
     document.getElementById('id_caja_formulario_accion').style.display = 'block';
-openModal();
+    openModal();
 }
 
 ///////EDIT////////////////
@@ -568,6 +568,19 @@ function comprobar_descripcion() {
         mensajeKO('descrip_accion', 'formato_descrip_rol_mal')
     }
     return false;
+}
+
+function comprobar_dni() {
+	const resp = check_dni(document.getElementById('id_dni').value);
+	if(resp){
+		mensajeOK('id_dni');
+		return true;
+	}else if(resp === undefined){
+		mensajeKO('id_dni', 'letra_dni_no_corresponde')
+	}else{
+		mensajeKO('id_dni', 'formato_dni_no_valido')
+	}
+	return false;
 }
 
 

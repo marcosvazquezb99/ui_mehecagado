@@ -159,7 +159,7 @@ function crearformoculto(name, action) {
 }
 
 function ponerinvisibleerror() {
-    document.getElementById('id_caja_error').style.display = 'none';
+    return true;
 }
 
 function ponerinvisibleformusuario() {
@@ -179,12 +179,16 @@ function ponerinvisibleformrecuperarcontrasena(){
 }
 
 function mensajeKO(idElemento, codigoerror) {
-    document.getElementById('id_texterror')
+    idSplit = idElemento.split('_');
+    idSplit.push('error');
+    idElementoError = idSplit.toString().replaceAll(',','_');
+    document.getElementById(idElementoError)
         .classList.forEach((value) => {
-        document.getElementById('id_texterror').classList.remove(value)
+        document.getElementById(idElementoError).classList.remove(value)
     })
-    document.getElementById('id_texterror').classList.add(codigoerror);
-    document.getElementById('id_caja_error').style.display = 'block';
+    console.log(idElemento, idElementoError);
+    document.getElementById(idElementoError).classList.add(codigoerror);
+    document.getElementById(idElementoError).style.display = 'contents';
     document.getElementById(idElemento).style.borderColor = "#ff0000";
     setLang();
 
@@ -201,7 +205,7 @@ function mensajeKO(idElemento, codigoerror) {
 // despues de pone la ventana de error como invisible
 function cerrarMensajeKO() {
 
-    codigos = String(document.getElementById('id_caja_error').classList);
+    /*codigos = String(document.getElementById('id_caja_error').classList);
     codigos = codigos.split(' ');
     for (let codigo of codigos) {
         document.getElementById('id_caja_error').classList.remove(codigo);
@@ -209,13 +213,19 @@ function cerrarMensajeKO() {
     document.getElementById('id_caja_error').innerHTML = '';
     document.getElementById('id_caja_error').style.borderColor = "";
     document.getElementById('id_caja_error').style.display = 'none';
+    */
+
+    return true;
 
 }
 
 function mensajeOK(idElemento) {
 
-    //document.getElementById('id_texterror').innerHTML = '';
-    document.getElementById('id_caja_error').style.display = 'none';
+    idSplit = idElemento.split('_');
+    idSplit.push('error');
+    idElementoError = idSplit.toString().replaceAll(',','_');
+
+    document.getElementById(idElementoError).style.display = 'none';
     document.getElementById(idElemento).style.borderColor = "#00e600";
 
 }
@@ -493,8 +503,15 @@ function checkRolDescription(value) {
 
 function closeModal() {
     document.getElementsByTagName('details')[0].removeAttribute('open');
-return true
+    hideErrors();
+    return true;
 
+}
+
+function hideErrors(){
+    document.querySelectorAll('small[class^="formato_error"]').forEach(function(el) {
+        el.style.display = 'none';
+     });
 }
 
 function openModal() {
