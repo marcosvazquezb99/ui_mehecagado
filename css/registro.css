@@ -111,3 +111,19 @@ body{
 	font-size:12px;
 	
 }
+
+.error_message{
+    display: contents;
+    color: red;
+}
+
+a{
+    transition: color 0.3s ease;
+    color: black;
+    text-decoration: none;
+}
+
+a:hover{
+    color: cornflowerblue;
+    cursor: pointer;
+}

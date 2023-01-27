@@ -123,3 +123,8 @@ header a:hover{
     color: cornflowerblue;
     cursor: pointer;
 }
+
+.error_message{
+    display: contents;
+    color: red;
+}

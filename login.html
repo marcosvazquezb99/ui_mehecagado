@@ -1,7 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0038)http://193.147.87.202/Front/login.html -->
-<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
     <title>LOGIN</title>
     <script type="text/javascript" src="./js/Login.js"></script>
     <script type="text/javascript" src="./js/md5.js"></script>
@@ -18,44 +21,48 @@
     <link rel="stylesheet" href="./css/login.css">
     <link rel="stylesheet" href="./css/snackbar.css">
     <link rel="stylesheet" href="./css/modal.css">
-  </head>
-  <body onload="incluircabeceralogin();ponerinvisibleerror();setLang();">
-    <header><div id='id_caja_superior'></div></header>
-    <div class="box">
-      <h1 class="pagina_login_wellcome"></h1>
+</head>
+<body onload="incluircabeceralogin();ponerinvisibleerror();setLang();">
+<header>
+    <div id='id_caja_superior'></div>
+</header>
+<div class="box">
+    <h1 class="pagina_login_wellcome"></h1>
 
-      <div id='id_caja_error'>
-        <div id='id_texterror'></div><img src="./images/cerrar3.jpg" width="50" height="50" onclick="cerrarMensajeKO();"/>
-      </div>
-      <div class="login">
-        <form id='id_form_login' name='form_login' action='javascript:login();' onsubmit='return comprobar_form_login();' method='post'>
-          <div class="input-container">
-            <input type='text' id='id_usuario' name='usuario' onblur='comprobar_usuario();'required="">
-            <label for="usuario"></label>
-          </div>
-          <div class="input-container">
-            <input type='password' id='id_contrasena' name='contrasena' onblur='comprobar_contrasena();'required="">
-            <label class="contrasena"></label>
-          </div>
-          <button type='submit' class="enviar"></button>
-        </form>
-        <a href='registrar.html'><p class='titulo_registrar'></p></a>
-      </div>
-  </div>
-
-  <div id="snackbar"></div>
-
-  <!-- The Modal -->
-  <div id="modal" class="modal">
-    <!-- Modal content -->
-    <div class="modal-content">
-      <span class="close">x</span>
-        <div id='id_texto_mensaje_accion'></div>
+    <div id='id_caja_error'>
+        <div id='id_texterror'></div>
+        <div class="login">
+            <form id='id_form_login' name='form_login' action='javascript:login();'
+                  onsubmit='return comprobar_form_login();' method='post'>
+                <div class="input-container">
+                    <input type='text' id='id_usuario' name='usuario' onblur='comprobar_usuario();' required="">
+                    <label class="usuario" for="id_usuario"></label>
+                    <small id="id_usuario_error"></small>
+                </div>
+                <div class="input-container">
+                    <input type='password' id='id_contrasena' name='contrasena' onblur='comprobar_contrasena();'
+                           required="">
+                    <label class="contrasena" for="id_contrasena"></label>
+                    <small id="id_contrasena_error"></small>
+                </div>
+                <button type='submit' class="enviar"></button>
+            </form>
+            <a href='registrar.html'><p class='titulo_registrar'></p></a>
+        </div>
     </div>
 
-  </div>
+    <div id="snackbar"></div>
 
+    <!-- The Modal -->
+    <div id="modal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">x</span>
+            <div id='id_texto_mensaje_accion'></div>
+        </div>
 
+    </div>
 
-  </body>
+</div>
+</body>
 </html>

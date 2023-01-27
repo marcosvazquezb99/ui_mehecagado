@@ -181,103 +181,103 @@ function comprobar_dni() {
 
 
 function comprobar_nombre() {
-	const resp = checkAcentosGuionEspacios(document.getElementById('nombre_persona').value, 45, 3);
+	const resp = checkAcentosGuionEspacios(document.getElementById('id_nombre_persona').value, 45, 3);
 	if(resp){
-		mensajeOK('nombre_persona');
+		mensajeOK('id_nombre_persona');
 		return true;
 	}else if(resp === undefined){
-		mensajeKO('nombre_persona', 'tamano_nombre_persona_mal')
+		mensajeKO('id_nombre_persona', 'tamano_nombre_persona_mal')
 	}else{
-		mensajeKO('nombre_persona', 'formato_nombre_persona_mal')
+		mensajeKO('id_nombre_persona', 'formato_nombre_persona_mal')
 	}
 	return false;
 }
 
 function comprobar_apellido() {
-	const resp = checkAcentosGuionEspacios(document.getElementById('apellidos_persona').value, 100, 5);
+	const resp = checkAcentosGuionEspacios(document.getElementById('id_apellido_persona').value, 100, 5);
 	if(resp){
-		mensajeOK('apellidos_persona');
+		mensajeOK('id_apellido_persona');
 		return true;
 	}else if(resp === undefined){
-		mensajeKO('apellidos_persona', 'tamano_apellidos_persona_mal')
+		mensajeKO('id_apellido_persona', 'tamano_apellidos_persona_mal')
 	}else{
-		mensajeKO('apellidos_persona', 'formato_apellidos_persona_mal')
+		mensajeKO('id_apellido_persona', 'formato_apellidos_persona_mal')
 	}
 	return false;
 }
 
 function comprobar_fechaNacimiento() {
-	const resp = checkBirthday(document.getElementById('fechaNacimiento_persona').value, 100, 5);
+	const resp = checkBirthday(document.getElementById('id_fechaNacimiento_persona').value, 100, 5);
 	if(resp){
-		mensajeOK('fechaNacimiento_persona');
+		mensajeOK('id_fechaNacimiento_persona');
 		return true;
 	}else if(resp === undefined){
-		mensajeKO('fechaNacimiento_persona', 'formato_fechaNacimiento_persona_mal')
+		mensajeKO('id_fechaNacimiento_persona', 'formato_fechaNacimiento_persona_mal')
 	}else{
-		mensajeKO('fechaNacimiento_persona', 'fecha_mayor_fechaNacimiento_persona_mal')
+		mensajeKO('id_fechaNacimiento_persona', 'fecha_mayor_fechaNacimiento_persona_mal')
 	}
 	return false;
 }
 
 function comprobar_direccion(){
-	const resp = checkAcentosGuionEspaciosCaracteres(document.getElementById('direccion_persona').value, 200, 10);
+	const resp = checkAcentosGuionEspaciosCaracteres(document.getElementById('id_direccion_persona').value, 200, 10);
 	if(resp){
-		mensajeOK('direccion_persona');
+		mensajeOK('id_direccion_persona');
 		return true;
 	}else if(resp === undefined){
-		mensajeKO('direccion_persona', 'tamano_direccion_persona_mal')
+		mensajeKO('id_direccion_persona', 'tamano_direccion_persona_mal')
 	}else{
-		mensajeKO('direccion_persona', 'formato_direccion_persona_mal')
+		mensajeKO('id_direccion_persona', 'formato_direccion_persona_mal')
 	}
 	return false;
 }
 
 function comprobar_telefono(){
-	const resp = checkPhoneNumber(document.getElementById('telefono_persona').value);
+	const resp = checkPhoneNumber(document.getElementById('id_telefono_persona').value);
 	if(resp){
-		mensajeOK('telefono_persona');
+		mensajeOK('id_telefono_persona');
 		return true;
 	}else if(resp === undefined){
-		mensajeKO('telefono_persona', 'tamano_telefono_persona_mal')
+		mensajeKO('id_telefono_persona', 'tamano_telefono_persona_mal')
 	}else{
-		mensajeKO('telefono_persona', 'formato_telefono_persona_mal')
+		mensajeKO('id_telefono_persona', 'formato_telefono_persona_mal')
 	}
 	return false;
 }
 
 
 function comprobar_email() {
-	const resp = checkEmail(document.getElementById('email_persona').value);
+	const resp = checkEmail(document.getElementById('id_email_persona').value);
 	if(resp){
-		mensajeOK('email_persona');
+		mensajeOK('id_email_persona');
 		return true;
 	}else if(resp === undefined){
-		mensajeKO('email_persona', 'tamano_email_persona_mal')
+		mensajeKO('id_email_persona', 'tamano_email_persona_mal')
 	}else{
-		mensajeKO('email_persona', 'formato_email_persona_mal')
+		mensajeKO('id_email_persona', 'formato_email_persona_mal')
 	}
 	return false;
 }
 
 function comprobar_foto() {
-	const resp = checkFilename(document.getElementById('foto_persona').value);
+	const resp = checkFilename(document.getElementById('id_foto_persona').value);
 	if(resp){
-		mensajeOK('foto_persona');
+		mensajeOK('id_foto_persona');
 		return true;
 	}else if(resp === undefined){
-		mensajeKO('foto_persona', 'tamano_foto_persona_mal')
+		mensajeKO('id_foto_persona', 'tamano_foto_persona_mal')
 	}else{
-		mensajeKO('foto_persona', 'formato_foto_persona_mal')
+		mensajeKO('id_foto_persona', 'formato_foto_persona_mal')
 	}
 	return false;
 }
 
 function check_password_equal(){
-	if(document.getElementById('id_contrasena').value === document.getElementById('repetir_contrasena').value){
-		mensajeOK('repetir_contrasena')
+	if(document.getElementById('id_contrasena').value === document.getElementById('id_rep_contrasena').value){
+		mensajeOK('id_rep_contrasena')
 		return true
 	}
-	mensajeKO('repetir_contrasena', 'contrasena_match_error');
+	mensajeKO('id_rep_contrasena', 'contrasena_match_error');
 	return false
 
 

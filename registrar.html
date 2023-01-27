@@ -7,6 +7,7 @@
 
     <title class="titulo_registrar">Registrar</title>
     <script type="text/javascript" src="./js/registro.js"></script>
+<!--    <script type="text/javascript" src="./js/persona.js"></script>-->
     <script type="text/javascript" src="./js/md5.js"></script>
     <script type="text/javascript" src="./locale/idioma.js"></script>
     <script type="text/javascript" src="./locale/Lang_ES.js"></script>
@@ -27,62 +28,76 @@
   
 
   <div id="id_caja_error">
-      <div id="id_texterror"></div><img src="./images/cerrar3.jpg" width="50" height="50" onclick="cerrarMensajeKO();">
+      <div id="id_texterror">  </div>
   </div>
 
   <div id="id_caja_formulario_registro">
       <form id="id_form_registro" action="javascript:registro();" name="form_registro" onsubmit='return comprobar_registro_form();' method="post">
       <div class="input-container"> 
-        <input  type="text" id="id_dni" name="dni"  onblur="comprobar_dni_persona();"required="">
-        <label for="dni"></label>
+        <input  type="text" id="id_dni" name="dni"  onblur="comprobar_dni();"required="">
+        <label class="dni" for="id_dni"></label>
+          <small id="id_dni_error"></small>
       </div>
       <div class="input-container">
-        <input  type="text" id="id_nombre_persona" name="nombre_persona"  onblur="comprobar_nombre_persona();"required="">
-        <label for="nombre_persona"></label>
+        <input  type="text" id="id_nombre_persona" name="nombre_persona"  onblur="comprobar_nombre()"required="">
+        <label class="nombre_persona" for="id_nombre_persona"></label>
+          <small id="id_nombre_persona_error"></small>
       </div>
       <div class="input-container">
         
-        <input  type="text" id="id_apellido_persona" name="apellidos_persona"  onblur="comprobar_apellidos_persona();"required="">
-        <label for="apellidos_persona"></label>
+        <input  type="text" id="id_apellido_persona" name="apellidos_persona"  onblur="comprobar_apellido();"required="">
+        <label class="apellidos_persona" for="id_apellido_persona"></label>
+          <small id="id_apellido_persona_error"></small>
       </div>
       <div class="input-container">
-        <input  type="date" id="id_fechaNacimiento_persona" name="fechaNacimiento_persona" >
-        <label for="fechaNacimiento_persona"></label>
+        <input  type="date" onblur="comprobar_fechaNacimiento()" id="id_fechaNacimiento_persona" name="fechaNacimiento_persona" >
+        <label class="fechaNacimiento_persona" for="id_fechaNacimiento_persona"></label>
+          <small id="id_fechaNacimiento_persona_error"></small>
       </div>
       <div class="input-container">
-        <input  type="text" id="id_direccion_persona" name="direccion_persona"   onblur="comprobar_direccion_persona();"required="">
-        <label for="direccion_persona"></label>
+        <input  type="text" id="id_direccion_persona" name="direccion_persona"   onblur="comprobar_direccion();"required="">
+        <label class="direccion_persona" for="id_direccion_persona"></label>
+          <small id="id_direccion_persona_error"></small>
       </div>
       <div class="input-container">
-        <input  type="number" id="id_telefono_persona" name="telefono_persona"  onblur="comprobar_telefono_persona();"required="">
-        <label for="telefono_persona"></label>
-      </div>  
+        <input  type="number" id="id_telefono_persona" name="telefono_persona"  onblur="comprobar_telefono();"required="">
+        <label class="telefono_persona" for="id_telefono_persona"></label>
+          <small id="id_telefono_persona_error"></small>
+      </div>
       <div class="input-container">
-        <input  type="email" id="id_email_persona" name="email_persona"  onblur="comprobar_email_persona();"required="">
-        <label for="email_persona"></label>
+        <input  type="email" id="id_email_persona" name="email_persona"  onblur="comprobar_email();"required="">
+        <label class="email_persona" for="id_email_persona"></label>
+          <small id="id_email_persona_error"></small>
       </div>
       <div class="input-container">
         <input  type="text" id="id_foto_persona" name="foto_persona" 
-        onblur="comprobar_imagen_persona();" required=""/>
-        <label for="foto_persona"></label>
+        onblur="comprobar_foto();" required=""/>
+        <label class="foto_persona" for="id_foto_persona"></label>
+          <small id="id_foto_persona_error"></small>
       </div>
       <div class="input-container">
         <input  type='text' id='id_usuario' name='usuario' onblur="comprobar_usuario();"required="">
-        <label class="usuario"></label>
+        <label class="usuario" for="id_usuario"></label>
+          <small id="id_usuario_error"></small>
       </div>
       <div class="input-container">
         <input  type="password" name="contrasena" id="id_contrasena" onblur="comprobar_contrasena();"required="">
-        <label for="contrasena"></label>
+        <label class="contrasena" for="id_contrasena"></label>
+          <small id="id_contrasena_error"></small>
       </div>
       <div class="input-container">
-        <input type="password" name="rep_contrasena" id="id_rep_contrasena" onblur="comprobar_repcontrasena();"required="">
-        <label for="rep_contrasena"></label>
+        <input type="password" name="rep_contrasena" id="id_rep_contrasena" onblur="check_password_equal();"required="">
+        <label class="rep_contrasena" for="id_rep_contrasena"></label>
+          <small id="id_rep_contrasena_error"></small>
       </div>
     
       <button type="submit" class="enviar"></button>
+          <a class="" href="./index.html"><p class="titulo_volver">Volver</p></a>
+
       </form>
   </div>
 </div>
+
 </body>
 
 
