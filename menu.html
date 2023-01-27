@@ -72,10 +72,13 @@
                 <div id="id_caja_formulario_recuperar_contrasena">
 
                     <form id="id_form_recuperar_contrasena" name="form_recuperar_contrasena"
-                          action='javascript:recuperarContrasena();' onsubmit="return comprobar_form_recuperar();" method="post">
+                          action='javascript:recuperarContrasena();' onsubmit="return comprobar_form_recuperar();"
+                          method="post">
 
-                        <label class="cambiar_contrasena"></label>
-                        <input class="text_formato_descrip_rol" type='password' id='id_contrasena' name='contrasena' onblur='comprobar_contrasena();'></input>
+                        <label class="contrasena" for="id_contrasena"></label><br/>
+                        <input type='password' id='id_contrasena' name='contrasena' onblur='comprobar_contrasena();'
+                               required="">
+                        <small id="id_contrasena_error"></small>
                         <br>
                         <input type='submit' class="boton_cambiar_contrasena" value='Cambiar contraseña'
                                onclick="document.getElementById('id_caja_formulario_recuperar_contrasena').style.display = 'none', closeModal()">
