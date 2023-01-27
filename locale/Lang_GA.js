@@ -128,6 +128,7 @@ arrayGA={
 	'edit_rolaccionfuncionalidad_OK' : 'O permiso modificouse con éxito',
 
 	'repetir_contrasena': 'Repetir contrasinal',
+	'boton_cambiar_contrasena' : 'Cambiar contrasinal',
 
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////
